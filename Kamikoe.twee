@@ -1,0 +1,192 @@
+:: StoryTitle
+Kamikoe
+
+
+:: StoryData
+{
+  "ifid": "15AA5A1E-D9FB-4F9E-91FB-D11F676A07B7",
+  "format": "Harlowe",
+  "format-version": "3.3.5",
+  "start": "player is trapped",
+  "zoom": 0.6
+}
+
+
+:: backstory {"position":"0,2","size":"100,100"}
+2nd person perspective ("you")
+
+
+Deity can grant power to people
+	One of the people who worshipped deity used power for evil
+	gave deity bad reputation
+	no one worships deity anymore
+	Deity is pissed
+Player is from a family of generational shrine priests 
+	3 generations → grandparants, parents, player
+	Something happened to grandparents
+	parents took player away,
+	player grew up outside of the shrine not knowing what happened to their grandparents, is finally an adult, wants to find out what happened
+	parents refuse to tell player
+	family friend reveals the shrine, player goes to figure it out
+Help the deity understand what happened and they will no longer seek vengeance on your bloodline or smth
+
+
+
+:: bad ending {"position":"175,550","size":"100,100"}
+
+
+
+:: beds {"position":"103,173","size":"100,100"}
+
+another memory plays out about the happy lives of the shrine priests
+
+another item to collect
+
+you return to the [[living quarters]] 
+
+
+:: continue {"position":"366,55","size":"100,100"}
+the story continues
+
+warning from deity that they must come back with the correct items or else they die
+
+
+Before you appears three pathways, choose your path wisely.
+
+[[left|living quarters]] 
+
+[[forward|prayer room]]
+
+[[right|showers]]
+
+
+(have this text appear after the player has visited all the rooms at least once)
+
+are you ready to present your offerings to the deity?
+
+[[yes]]
+
+no
+
+
+:: deity quest {"position":"218,1","size":"100,100"}
+backstory of abandoned shrine
+
+you come across an extremely weathered rock
+
+"you! its your lineage that has caused this ruin!"
+A voice echoes in your head.
+
+improper care of shrine, deity statue has been broken, missing items
+
+player must explore the shrine in order the find the missing items and heal/rebuild the deity statue
+
+[[continue]]
+
+
+[[no]]
+
+
+:: good ending {"position":"300,550","size":"100,100"}
+
+
+
+:: kitchen {"position":"226,283","size":"100,100"}
+
+another memory plays out about preparing food offerings
+
+another item to collect (a plate maybe)
+
+you return to the [[living quarters]] 
+
+
+:: large pots of incense {"position":"400,325","size":"100,100"}
+
+memory of preparing incense offerings to the deity
+
+notice that one of the incense pots is missing (player needs to get)
+
+
+[[the memory fades|prayer room]]
+
+
+:: living quarters {"position":"250,125","size":"100,100"}
+you enter the room and see dilapidated living quarters
+
+the [[beds]] are in ruins, the [[wooden closets]] are rotting, the [[kitchen]] is musty
+
+
+:: neutral ending {"position":"425,550","size":"100,100"}
+
+
+
+:: no {"position":"650,0","size":"100,100"}
+the story ends, you try to climb out of the crater but the shrine deity curses you and you fall to your death
+
+
+:: player is trapped {"position":"107,0","size":"100,100"}
+
+*Huff huff*
+
+You pant, sweat dripping off your back as you traverse through the dense forest.
+
+falls into a crater and finds the shrine
+
+[[you enter the shrine->deity quest]]
+
+
+:: prayer cushions {"position":"675,225","size":"100,100"}
+
+
+ceremony of offering and praying to the deity
+
+something in here that the player needs to get
+
+[[the memory fades|prayer room]]
+
+
+:: prayer room {"position":"475,175","size":"100,100"}
+walking forward leads you to the prayer room. as you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor
+
+
+
+
+
+[[faint glow|wishing well]] in the room.
+
+
+:: showers {"position":"525,50","size":"100,100"}
+just the showers
+
+maybe make this a resource room? something the player can explore in order to get tools to help them retrieve items
+
+
+:: wishing well {"position":"600,350","size":"100,100"}
+walking up to the faint glow, you see a wishing well in the back of the room
+
+there is something at the bottom of the well, an item that the player needs to restore the statue
+
+#here we can either have the player go back and explore the prayer room in order to find tools to retrieve the item up or they can answer a riddle/question in order to retrieve the item
+
+
+:: wooden closets {"position":"100,300","size":"100,100"}
+
+inside the closets are moth-bitten priest clothes (look up official name)
+
+return to the [[living quarters]] 
+
+
+:: yes {"position":"300,425","size":"100,100"}
+
+what do you offer up to the shrine?
+
+(here we would need to have an inventory system, make it so players can only offer whats in their inventory)
+
+#depending on the items we can give them a good, neutral, or bad ending
+
+
+[[good ending]]
+
+[[neutral ending]]
+
+[[bad ending]]
