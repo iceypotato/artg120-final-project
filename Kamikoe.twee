@@ -7,9 +7,21 @@ Kamikoe
   "ifid": "15AA5A1E-D9FB-4F9E-91FB-D11F676A07B7",
   "format": "Harlowe",
   "format-version": "3.3.5",
-  "start": "player is trapped",
+  "start": "Introduction",
   "zoom": 0.6
 }
+
+
+:: Introduction {"position":"450,350","size":"100,100"}
+You stand at the edge of a dense forest, your heart racing with anticipation. Before you lies an old and decrepit shrine, its weathered torii gates barely standing and the once vibrant colors faded. This shrine carries a dark history, steeped in the wrath of a vengeful spirit. Legend has it that the shrine was cursed after it was abandoned by its keepers.
+[[introduction2]]
+
+
+
+:: Introduction3 {"position":"650,350","size":"100,100"}
+Now, as an adult, the burning desire to uncover the truth ignites within you. The whispers of the shrine's secrets have reached your ears through a family friend, who reveals its location. It's time to face your fears, confront the past, and find out what truly happened to your grandparents.
+
+[[walk towards shrine]]
 
 
 :: backstory {"position":"0,2","size":"100,100"}
@@ -31,33 +43,30 @@ Player is from a family of generational shrine priests
 Help the deity understand what happened and they will no longer seek vengeance on your bloodline or smth
 
 
-
-:: bad ending {"position":"175,550","size":"100,100"}
-
+:: bad ending {"position":"1150,1300","size":"100,100"}
 
 
-:: beds {"position":"103,173","size":"100,100"}
 
-another memory plays out about the happy lives of the shrine priests
+:: beds {"position":"1275,525","size":"100,100"}
+As you approach the beds, a bittersweet memory begins to play out in your mind. You catch glimpses of the past, a time when the shrine priests lived joyfully within these walls. Laughter echoes through the air, and the sound of prayers being offered resonates with warmth and devotion.
 
-another item to collect
+Amidst the recollections, you spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing an item that holds significance in your quest. This newfound discovery serves as a reminder of the intricate interplay between past and present, urging you to carry the torch of your ancestors and restore the shrine to its former glory.
 
-you return to the [[living quarters]] 
+With the item securely in your possession, you take a moment to reflect on the resilience of your lineage and the weight of responsibility that rests upon your shoulders. The journey ahead is not an easy one, but with each step, you grow closer to fulfilling your duty and healing the shrine.
 
+You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
 
-:: continue {"position":"366,55","size":"100,100"}
-the story continues
-
-warning from deity that they must come back with the correct items or else they die
+[[Return to the living quarters|living quarters]]
 
 
-Before you appears three pathways, choose your path wisely.
+:: continue {"position":"1525,350","size":"100,100"}
+The deity's warning lingers in your mind, a constant reminder of the grave consequences that await failure. With a deep breath, you gather your resolve and survey the shrine before you. Three pathways stretch out, each holding its own mysteries and potential dangers. You must choose your path wisely.
 
-[[left|living quarters]] 
+To the left, you see the entrance to the living quarters, once inhabited by your ancestors who faithfully cared for the shrine. Though the passage may hold clues to the missing items, it also carries the weight of their secrets and hidden perils.[[left|living quarters]] 
 
-[[forward|prayer room]]
+Straight ahead lies the prayer room, a place of reverence and spiritual connection. The air is thick with ancient energy, and the room beckons you to uncover its sacred knowledge. Here, the answers you seek may reveal themselves through prayers whispered in the hallowed space.[[forward|prayer room]]
 
-[[right|showers]]
+To the right, you find yourself drawn towards the showers. In the dim light, water droplets echo, creating an eerie melody. The dampness hangs in the air, a stark contrast to the shrine's arid surroundings. Here, the path may be treacherous, but it could lead to the discovery of essential items crucial to your quest.[[right|showers]]
 
 
 (have this text appear after the player has visited all the rooms at least once)
@@ -69,115 +78,128 @@ are you ready to present your offerings to the deity?
 no
 
 
-:: deity quest {"position":"218,1","size":"100,100"}
-backstory of abandoned shrine
+:: deity quest {"position":"1025,350","size":"100,100"}
+As you explore the abandoned shrine, a sense of solemnity hangs in the air. The remnants of neglect and decay surround you, casting a gloomy shadow over the once revered place. Your footsteps echo through the courtyard as you come across an ancient, weathered rock.
 
-you come across an extremely weathered rock
+Suddenly, a voice resounds in your head, filled with accusation and anger. "You! It is your lineage that has caused this ruin!" The words reverberate within you, and you feel a weight of responsibility descend upon your shoulders.
 
-"you! its your lineage that has caused this ruin!"
-A voice echoes in your head.
+The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation. It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.
 
-improper care of shrine, deity statue has been broken, missing items
-
-player must explore the shrine in order the find the missing items and heal/rebuild the deity statue
+do you continue or turn back
 
 [[continue]]
 
 
-[[no]]
+[[turn back]]
 
 
-:: good ending {"position":"300,550","size":"100,100"}
-
-
-
-:: kitchen {"position":"226,283","size":"100,100"}
-
-another memory plays out about preparing food offerings
-
-another item to collect (a plate maybe)
-
-you return to the [[living quarters]] 
-
-
-:: large pots of incense {"position":"400,325","size":"100,100"}
-
-memory of preparing incense offerings to the deity
-
-notice that one of the incense pots is missing (player needs to get)
-
-
-[[the memory fades|prayer room]]
-
-
-:: living quarters {"position":"250,125","size":"100,100"}
-you enter the room and see dilapidated living quarters
-
-the [[beds]] are in ruins, the [[wooden closets]] are rotting, the [[kitchen]] is musty
-
-
-:: neutral ending {"position":"425,550","size":"100,100"}
+:: good ending {"position":"1425,1275","size":"100,100"}
 
 
 
-:: no {"position":"650,0","size":"100,100"}
-the story ends, you try to climb out of the crater but the shrine deity curses you and you fall to your death
+:: introduction2 {"position":"550,350","size":"100,100"}
+As you gaze upon the dilapidated structure, your mind wanders back to your childhood and the unanswered questions that have haunted you for years. Your grandparents, who were the caretakers of this shrine, disappeared without a trace when you were just a child. Your parents, always tight-lipped about their fate, moved you far away, hoping to shield you from the shrine's malevolent legacy.
+[[Introduction3]] 
 
 
-:: player is trapped {"position":"107,0","size":"100,100"}
+:: kitchen {"position":"1375,625","size":"100,100"}
+As you step into the kitchen, a vivid memory unfurls before your eyes. You find yourself immersed in a scene from the past, witnessing the diligent preparations of food offerings made by your ancestors. The rhythmic sounds of chopping and the fragrant aroma of incense fill the air, evoking a sense of devotion and reverence.
 
-*Huff huff*
+Lost in the recollection, your gaze falls upon a small, hidden compartment tucked away within the kitchen. Intrigued, you carefully open it, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
 
-You pant, sweat dripping off your back as you traverse through the dense forest.
+You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.
 
-falls into a crater and finds the shrine
+you return to the [[living quarters]]
+
+
+:: large pots of incense {"position":"1625,900","size":"100,100"}
+The large pots of incense in the prayer room evoke a memory of preparing fragrant offerings to the deity. Each pot is adorned with intricate patterns and symbols, representing different aspects of worship and spirituality. The air is filled with a soothing aroma as the incense slowly burns, creating a serene atmosphere for prayer and reflection.
+
+As you examine the pots more closely, you notice that one of them is missing. It seems like a crucial component is absent from the array of offerings. The missing incense pot raises questions and piques your curiosity. Could it hold a clue or possess a special significance?
+
+[[The memory fades|prayer room]] as you ponder the mystery of the missing incense pot, wondering what role it might play in your journey within this sacred space.
+
+
+:: living quarters {"position":"1400,500","size":"100,100"}
+As you enter the living quarters, a somber atmosphere envelopes you. The room appears frozen in time, a snapshot of a bygone era. Dilapidated and worn, the remnants of what was once a place of comfort now lay in ruins.
+
+To your left, you see the  [[beds]], On the right side of the room you see the [[wooden closets]], Towards the back of the living quarters, you discover the [[kitchen]]
+
+
+:: neutral ending {"position":"1700,1275","size":"100,100"}
+
+
+
+:: player is trapped {"position":"900,350","size":"100,100"}
+After what feels like an eternity, you finally come to a sudden stop, landing with a thud at the bottom of the pit. Your surroundings are pitch black, the only sounds echoing through the confined space are your own ragged breaths.
+
+Panic rises within you as you realize you are trapped. The pit's walls are smooth and sheer, leaving no footholds to climb out. It seems the shrine has claimed you as its captive. How did such a treacherous pit exist in the shrine's vicinity? Was it a deliberate trap, or a cruel twist of fate?
+
+As your eyes adjust to the darkness, you notice a faint glimmer in the corner of the pit. You crawl towards it, discovering a small crevice in the wall. Through this narrow opening, you catch a glimpse of the shrine's courtyard, tauntingly close but agonizingly out of reach.
 
 [[you enter the shrine->deity quest]]
 
 
-:: prayer cushions {"position":"675,225","size":"100,100"}
+:: prayer cushions {"position":"1800,750","size":"100,100"}
+The prayer cushions in the prayer room serve as a place for individuals to engage in the ceremony of offering and praying to the deity. The soft and comfortable cushions are arranged in a neat row, inviting visitors to sit and immerse themselves in quiet contemplation. As you observe the room, you notice something intriguing hidden among the cushions—a small, intricately carved amulet. The amulet glimmers softly, hinting at its significance. Its purpose and meaning remain a mystery, but it seems to hold a deeper connection to the prayers offered in this sacred space.
+
+[[The memory fades|prayer room]] as you take a moment to reflect on the spiritual energy emanating from the prayer cushions.
 
 
-ceremony of offering and praying to the deity
-
-something in here that the player needs to get
-
-[[the memory fades|prayer room]]
-
-
-:: prayer room {"position":"475,175","size":"100,100"}
-walking forward leads you to the prayer room. as you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor
+:: prayer room {"position":"1600,725","size":"100,100"}
+Walking forward leads you to the prayer room. As you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor. The room is adorned with a [[faint glow|wishing well]] in the center. 
 
 
 
+:: showers {"position":"1700,500","size":"100,100"}
+As you enter the showers, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.
+
+The showers reveal themselves to be more than just a place of cleansing. Here, amidst the faded tiles and mildew-covered surfaces, you discover a resource room, filled with tools and items that may aid you in your quest to retrieve the missing items.
+
+Shelves line the walls, displaying an assortment of aged and worn equipment. Rusty wrenches, frayed ropes, and weathered flashlights catch your attention. These tools, though worn by time and neglect, still possess the potential to assist you in your journey.
+
+With cautious curiosity, you explore the room further, discovering a hidden compartment that holds additional resources. Inside, you find a tattered map, its faded markings hinting at secret passages and hidden chambers within the shrine. This newfound knowledge may prove invaluable as you navigate the shrine's depths.
+
+With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The showers have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
+
+Leaving the resource room behind, you step out of the showers, ready to continue your quest.
+
+[[go back|continue]]
 
 
-[[faint glow|wishing well]] in the room.
+:: turn back {"position":"450,200","size":"100,100"}
+the story ends, you try to climb out of the crater but the shrine deity curses you and you fall to your death
 
 
-:: showers {"position":"525,50","size":"100,100"}
-just the showers
+:: walk towards shrine {"position":"775,350","size":"100,100"}
+With a mixture of curiosity and trepidation, you take a step forward, drawn to the ancient shrine like a moth to a flame. The path feels uneven beneath your feet, overgrown with weeds and obscured by fallen leaves. As you cautiously advance, an unforeseen misstep causes your foot to catch on a hidden root.
 
-maybe make this a resource room? something the player can explore in order to get tools to help them retrieve items
-
-
-:: wishing well {"position":"600,350","size":"100,100"}
-walking up to the faint glow, you see a wishing well in the back of the room
-
-there is something at the bottom of the well, an item that the player needs to restore the statue
-
-#here we can either have the player go back and explore the prayer room in order to find tools to retrieve the item up or they can answer a riddle/question in order to retrieve the item
+Unable to regain your balance, you stumble and lose control. Gravity pulls you downward, and with a startled gasp, you plummet into a hidden pit concealed beneath the earth. The air rushes past you as you fall, the darkness enveloping you completely.
+[[player is trapped]] 
 
 
-:: wooden closets {"position":"100,300","size":"100,100"}
 
-inside the closets are moth-bitten priest clothes (look up official name)
+:: wishing well {"position":"1800,900","size":"100,100"}
+As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something glimmering at the bottom—a vital item that holds the power to restore the statue.
 
-return to the [[living quarters]] 
+At this point, you have two options. You can either backtrack and explore the prayer room further, searching for the necessary tools to retrieve the item from the well's depths. Alternatively, you can attempt to solve a riddle or answer a question posed by the well, providing a different means of obtaining the item.
+
+[[Return to the prayer room|prayer room]] to search for tools or [[Accept the challenge|wishing well riddle]] and test your wits against the enigmatic query presented by the well. Choose your path wisely, for the fate of the statue's restoration lies in your hands.
 
 
-:: yes {"position":"300,425","size":"100,100"}
+:: wishing well riddle {"position":"2000,1075","size":"100,100"}
 
+
+
+:: wooden closets {"position":"1275,625","size":"100,100"}
+As you cautiously approach the wooden closets, the musty scent grows stronger. The doors creak open reluctantly, revealing the moth-bitten priest clothes neatly arranged inside. These ceremonial garments, once vibrant and significant, have fallen victim to time's relentless grasp.
+
+You run your fingers over the delicate fabric, feeling the traces of history embedded within each thread. The official name for these clothes is "Kamishimo," a traditional attire worn by shrine priests during rituals and ceremonies. Though now tattered and faded, they still bear a sense of sacredness.
+
+return to the [[living quarters]]
+
+
+:: yes {"position":"1425,1050","size":"100,100"}
 what do you offer up to the shrine?
 
 (here we would need to have an inventory system, make it so players can only offer whats in their inventory)
