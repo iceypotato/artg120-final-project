@@ -7,24 +7,27 @@ Kamikoe
   "ifid": "15AA5A1E-D9FB-4F9E-91FB-D11F676A07B7",
   "format": "Harlowe",
   "format-version": "3.3.5",
-  "start": "Introduction",
-  "zoom": 0.6
+  "start": "intro",
+  "zoom": 1
 }
 
 
-:: Introduction {"position":"450,350","size":"100,100"}
-You stand at the edge of a dense forest, your heart racing with anticipation. Before you lies an old and decrepit shrine, its weathered torii gates barely standing and the once vibrant colors faded. This shrine carries a dark history, steeped in the wrath of a vengeful spirit. Legend has it that the shrine was cursed after it was abandoned by its keepers.
-[[introduction2]]
+:: Testing {"position":"2075,625","size":"100,100"}
+|a)[abcds]
+
+|b)[lgima]
+
+{
+(replace: ?b)[(print: (hooks-named: "b")'s lines)]
+
+(set: _testfunc to (macro: str-type _hookname, [
+	(output-data: (click-replace: (hooks-named: _hookname)) + (t8n: 'dissolve'))
+]))
+
+}
 
 
-
-:: Introduction3 {"position":"650,350","size":"100,100"}
-Now, as an adult, the burning desire to uncover the truth ignites within you. The whispers of the shrine's secrets have reached your ears through a family friend, who reveals its location. It's time to face your fears, confront the past, and find out what truly happened to your grandparents.
-
-[[walk towards shrine]]
-
-
-:: backstory {"position":"0,2","size":"100,100"}
+:: backstory {"position":"500,200","size":"100,100"}
 2nd person perspective ("you")
 
 
@@ -43,11 +46,7 @@ Player is from a family of generational shrine priests
 Help the deity understand what happened and they will no longer seek vengeance on your bloodline or smth
 
 
-:: bad ending {"position":"1150,1300","size":"100,100"}
-
-
-
-:: beds {"position":"1275,525","size":"100,100"}
+:: beds {"position":"50,950","size":"100,100"}
 As you approach the beds, a bittersweet memory begins to play out in your mind. You catch glimpses of the past, a time when the shrine priests lived joyfully within these walls. Laughter echoes through the air, and the sound of prayers being offered resonates with warmth and devotion.
 
 Amidst the recollections, you spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing an item that holds significance in your quest. This newfound discovery serves as a reminder of the intricate interplay between past and present, urging you to carry the torch of your ancestors and restore the shrine to its former glory.
@@ -56,63 +55,186 @@ With the item securely in your possession, you take a moment to reflect on the r
 
 You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
 
+[[There is something on the bed.->get item 1]]
+
 [[Return to the living quarters|living quarters]]
 
 
-:: continue {"position":"1525,350","size":"100,100"}
+:: continue {"position":"1225,1400","size":"100,100"}
+You leave, the shrine. Though all your questions have not been answered. You leave with satifiscation
+
+the end.
+
+
+:: courtyard {"position":"1200,700","size":"100,100"}
 The deity's warning lingers in your mind, a constant reminder of the grave consequences that await failure. With a deep breath, you gather your resolve and survey the shrine before you. Three pathways stretch out, each holding its own mysteries and potential dangers. You must choose your path wisely.
 
-To the left, you see the entrance to the living quarters, once inhabited by your ancestors who faithfully cared for the shrine. Though the passage may hold clues to the missing items, it also carries the weight of their secrets and hidden perils.[[left|living quarters]] 
+To the left, you see the entrance to the [[living quarters]], once inhabited by your ancestors who faithfully cared for the shrine. Though the passage may hold clues to the missing items, it also carries the weight of their secrets and hidden perils.
 
-Straight ahead lies the prayer room, a place of reverence and spiritual connection. The air is thick with ancient energy, and the room beckons you to uncover its sacred knowledge. Here, the answers you seek may reveal themselves through prayers whispered in the hallowed space.[[forward|prayer room]]
+Straight ahead lies the [[prayer room]], a place of reverence and spiritual connection. The air is thick with ancient energy, and the room beckons you to uncover its sacred knowledge. Here, the answers you seek may reveal themselves through prayers whispered in the hallowed space.
 
-To the right, you find yourself drawn towards the showers. In the dim light, water droplets echo, creating an eerie melody. The dampness hangs in the air, a stark contrast to the shrine's arid surroundings. Here, the path may be treacherous, but it could lead to the discovery of essential items crucial to your quest.[[right|showers]]
+To the right, you find yourself drawn towards the [[storage room]]. In the dim light, water droplets echo, creating an eerie melody. The dampness hangs in the air, a stark contrast to the shrine's arid surroundings. <!--Here, the path may be treacherous, but it could lead to the discovery of essential items crucial to your quest.-->
 
+There are a pair of |dogs>[guard dogs], and an [[Ema->ema]] to look at.
 
-(have this text appear after the player has visited all the rooms at least once)
+|present)[It seems like there are enough items to present to the statue. [[do it?->offerings]]]\
 
-are you ready to present your offerings to the deity?
+{
+(if: $hasGold is true and $hasIncensePot is true and $hasPlate is true and $hasRobes is true and $hasTablet is true)[
+	(set: $hasAllItems to true)
+]
 
-[[yes]]
+(if: $hasAllItems is true)[
+	(show: ?present)
+]
 
-no
-
-
-:: deity quest {"position":"1025,350","size":"100,100"}
-As you explore the abandoned shrine, a sense of solemnity hangs in the air. The remnants of neglect and decay surround you, casting a gloomy shadow over the once revered place. Your footsteps echo through the courtyard as you come across an ancient, weathered rock.
-
-Suddenly, a voice resounds in your head, filled with accusation and anger. "You! It is your lineage that has caused this ruin!" The words reverberate within you, and you feel a weight of responsibility descend upon your shoulders.
-
-The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation. It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.
-
-do you continue or turn back
-
-[[continue]]
+(if: $dogsunlocked is true)[(click: ?dogs)[(go-to: "incense pot")]]
+}
 
 
-[[turn back]]
+:: ema {"position":"1100,875","size":"100,100"}
+(if: $hasTablet is false)[There a bunch of tablets scattered around, but one catches your eye. You take it.]\
+(else:)[There is nothing else to see here.]
+
+[[Go back->courtyard]]
+{
+(set: $hasTablet to true)
+}
 
 
-:: good ending {"position":"1425,1275","size":"100,100"}
+:: examine box {"position":"225,1150","size":"100,100"}
+|unlocked)[Lost in the recollection, your gaze falls upon a small, hidden compartment tucked away within the kitchen. Intrigued, you carefully open it, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
+
+You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.]\
+
+\|locked)[It looks like theres some sort of mechanism attached to it. It won't budge.]
+
+[[Go back->wooden closets]] 
+{
+(if:$isBoxUnlocked is true)[
+	(set: $hasPlate to true)
+    (show: ?unlocked)
+]
+(else:)[(show: ?locked)]
+}
+
+
+:: get item 1 {"position":"50,1075","size":"100,100"}
+{
+(if:$hasItem1 is false)[
+	There is a photo. You collect it.
+    (set: $hasItem1 to true)
+]
+(else:)[
+	There is nothing else.
+]
+}
+
+[[Go back->beds]] 
 
 
 
-:: introduction2 {"position":"550,350","size":"100,100"}
+:: get item 2 {"position":"400,1150","size":"100,100"}
+{
+(if:$hasItem2 is false)[
+	You see an item on the ground. You pick it up.
+    (set: $hasItem2 to true)
+]
+(else:)[
+	There is nothing else interesting.
+]
+}
+
+[[Go back->wooden closets]] 
+
+
+:: get item 3 {"position":"800,1075","size":"100,100"}
+{
+(if:$hasItem3 is false)[
+	You pick up a rice bowl of some sort. It's intricate.
+    (set: $hasItem3 to true)
+]
+(else:)[
+	there is nothing else here.
+]
+}
+
+[[Go back->kitchen]] 
+
+
+:: get robes {"position":"2425,1125","size":"100,100"}
+You found some robes. It seems important.
+
+[[Go back->storage room]]\
+{
+(set: $hasRobes to true)
+}
+
+
+:: gold ingot {"position":"1850,1200","size":"100,100"}
+You get a gold ingot. It looks important.
+
+[[Go back->prayer room]] 
+{
+(set: $hasGold to true)
+}
+
+
+:: incense pot {"position":"1325,875","size":"100,100"}
+you get incense pot
+
+[[Go back->courtyard]] 
+{
+(set: $hasIncensePot to true)
+}
+
+
+:: intro {"position":"400,400","size":"100,100"}
+You stand at the edge of a dense forest, your heart racing with anticipation. Before you lies an old and decrepit shrine, its weathered torii gates barely standing and the once vibrant colors faded. This shrine carries a dark history, steeped in the wrath of a vengeful spirit. Legend has it that the shrine was cursed after it was abandoned by its keepers.
+[[intro 2]]
+
+(display:"variables")
+
+
+:: intro 2 {"position":"550,400","size":"100,100"}
 As you gaze upon the dilapidated structure, your mind wanders back to your childhood and the unanswered questions that have haunted you for years. Your grandparents, who were the caretakers of this shrine, disappeared without a trace when you were just a child. Your parents, always tight-lipped about their fate, moved you far away, hoping to shield you from the shrine's malevolent legacy.
-[[Introduction3]] 
+[[intro 3]]
 
 
-:: kitchen {"position":"1375,625","size":"100,100"}
+:: intro 3 {"position":"700,400","size":"100,100"}
+Now, as an adult, the burning desire to uncover the truth ignites within you. The whispers of the shrine's secrets have reached your ears through a family friend, who reveals its location. It's time to face your fears, confront the past, and find out what truly happened to your grandparents.
+
+[[intro 4]]
+
+
+:: intro 4 {"position":"850,400","size":"100,100"}
+With a mixture of curiosity and trepidation, you take a step forward, drawn to the ancient shrine like a moth to a flame. The path feels uneven beneath your feet, overgrown with weeds and obscured by fallen leaves. As you cautiously advance, an unforeseen misstep causes your foot to catch on a hidden root.
+
+Unable to regain your balance, you stumble and lose control. Gravity pulls you downward, and with a startled gasp, you plummet into a hidden pit concealed beneath the earth. The air rushes past you as you fall, the darkness enveloping you completely.
+[[intro 5]]
+
+
+:: intro 5 {"position":"1000,400","size":"100,100"}
+After what feels like an eternity, you finally come to a sudden stop, landing with a thud at the bottom of the pit. Your surroundings are pitch black, the only sounds echoing through the confined space are your own ragged breaths.
+
+Panic rises within you as you realize you are trapped. The pit's walls are smooth and sheer, leaving no footholds to climb out. It seems the shrine has claimed you as its captive. How did such a treacherous pit exist in the shrine's vicinity? Was it a deliberate trap, or a cruel twist of fate?
+
+As your eyes adjust to the darkness, you notice a faint glimmer in the corner of the pit. You crawl towards it, discovering a small crevice in the wall. Through this narrow opening, you catch a glimpse of the shrine's courtyard, tauntingly close but agonizingly out of reach.
+
+[[you enter the shrine->start]]
+
+
+:: kitchen {"position":"725,925","size":"100,100"}
 As you step into the kitchen, a vivid memory unfurls before your eyes. You find yourself immersed in a scene from the past, witnessing the diligent preparations of food offerings made by your ancestors. The rhythmic sounds of chopping and the fragrant aroma of incense fill the air, evoking a sense of devotion and reverence.
 
-Lost in the recollection, your gaze falls upon a small, hidden compartment tucked away within the kitchen. Intrigued, you carefully open it, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
+There is a [[scale]] of some sort.
 
-You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.
+There is a [[heavy item->get item 3]] of some sort.
 
 you return to the [[living quarters]]
 
 
-:: large pots of incense {"position":"1625,900","size":"100,100"}
+:: large pots of incense {"position":"1475,1075","size":"100,100"}
 The large pots of incense in the prayer room evoke a memory of preparing fragrant offerings to the deity. Each pot is adorned with intricate patterns and symbols, representing different aspects of worship and spirituality. The air is filled with a soothing aroma as the incense slowly burns, creating a serene atmosphere for prayer and reflection.
 
 As you examine the pots more closely, you notice that one of them is missing. It seems like a crucial component is absent from the array of offerings. The missing incense pot raises questions and piques your curiosity. Could it hold a clue or possess a special significance?
@@ -120,41 +242,262 @@ As you examine the pots more closely, you notice that one of them is missing. It
 [[The memory fades|prayer room]] as you ponder the mystery of the missing incense pot, wondering what role it might play in your journey within this sacred space.
 
 
-:: living quarters {"position":"1400,500","size":"100,100"}
+:: living quarters {"position":"325,825","size":"100,100"}
 As you enter the living quarters, a somber atmosphere envelopes you. The room appears frozen in time, a snapshot of a bygone era. Dilapidated and worn, the remnants of what was once a place of comfort now lay in ruins.
 
 To your left, you see the  [[beds]], On the right side of the room you see the [[wooden closets]], Towards the back of the living quarters, you discover the [[kitchen]]
 
-
-:: neutral ending {"position":"1700,1275","size":"100,100"}
-
+[[Back->courtyard]] 
 
 
-:: player is trapped {"position":"900,350","size":"100,100"}
-After what feels like an eternity, you finally come to a sudden stop, landing with a thud at the bottom of the pit. Your surroundings are pitch black, the only sounds echoing through the confined space are your own ragged breaths.
-
-Panic rises within you as you realize you are trapped. The pit's walls are smooth and sheer, leaving no footholds to climb out. It seems the shrine has claimed you as its captive. How did such a treacherous pit exist in the shrine's vicinity? Was it a deliberate trap, or a cruel twist of fate?
-
-As your eyes adjust to the darkness, you notice a faint glimmer in the corner of the pit. You crawl towards it, discovering a small crevice in the wall. Through this narrow opening, you catch a glimpse of the shrine's courtyard, tauntingly close but agonizingly out of reach.
-
-[[you enter the shrine->deity quest]]
+:: maze fail {"position":"2250,1150","size":"100,100"}
+You fell, though you lived. You [[go back->maze start]] to where you started.
 
 
-:: prayer cushions {"position":"1800,750","size":"100,100"}
+:: maze start {"position":"2300,1000","size":"100,100"}
+{
+(set: _step to 0)
+}\
+There is a stairway that leads to a large room. Tho you should be careful, some of the tiles seem to look like they will collapse upon standing on them.
+
+|f>[Forward]
+|l>[Left]
+|r>[Right]
+
+[[Go back->storage room]]\
+\
+{
+(set: _madeIt to (macro: num-type _step, [
+	(if: _step is 13)[(go-to: "get robes")]
+    (out:)[]
+]))
+
+(click-rerun: ?f)[
+	(if: _step is 0 or 2 or 3 or 6 or 8 or 10 or 11)[(set: _step to it + 1)]
+    (else:)[(go-to: "maze fail")]
+	(_madeIt: _step)
+
+]
+(click-rerun: ?l)[
+	(if: _step is 1 or 9)[(set: _step to it + 1)]
+    (else:)[(go-to: "maze fail")]
+    (_madeIt: _step)
+]
+(click-rerun: ?r)[
+	(if: _step is 4 or 5 or 7 or 12)[(set: _step to it + 1)]
+    (else:)[(go-to: "maze fail")]
+    (_madeIt: _step)
+]
+}
+
+
+:: mirror puzzle {"position":"1850,1075","size":"100,100"}
+|mirror1>[rotate mirror 1: ]|angle1>[$mirror1angle]
+|mirror2>[rotate mirror 2: ]|angle2>[$mirror2angle]
+|mirror3>[rotate mirror 3: ]|angle3>[$mirror3angle]
+|mirror4>[rotate mirror 4: ]|angle4>[$mirror4angle]
+
+[[Go back->prayer room]]
+
+|unlock)[[[Something Unlocked->gold ingot]]]
+{
+(set: $mirror1angle to 0)
+(set: $mirror2angle to 0)
+(set: $mirror3angle to 0)
+(set: $mirror4angle to 0)
+
+(set: _changeAngle to (macro: num-type _angle, [
+	(if: _angle is 315)[(set: _angle to 0)]
+    (else:)[(set: _angle to it + 45)]
+	(outdata: _angle)
+]))
+
+(set:_checkMirrors to (macro: [
+	(if: $mirror1angle is 45 and $mirror2angle is 225 and $mirror3angle is 135 and $mirror4angle is 45)[
+		(out:)[(show: ?unlock)]
+   ]
+    (out:)[]
+]))
+
+(click-rerun: ?mirror1)[
+    (set: $mirror1angle to (_changeAngle: $mirror1angle))
+    (replace: ?angle1)[$mirror1angle]
+    (_checkMirrors:)
+]
+(click-rerun: ?mirror2)[
+    (set: $mirror2angle to (_changeAngle: $mirror2angle))
+    (replace: ?angle2)[$mirror2angle]
+    (_checkMirrors:)
+]
+(click-rerun: ?mirror3)[
+	(set: $mirror3angle to (_changeAngle: $mirror3angle))
+    (replace: ?angle3)[$mirror3angle]
+    (_checkMirrors:)
+]
+(click-rerun: ?mirror4)[
+	(set: $mirror4angle to (_changeAngle: $mirror4angle))
+    (replace: ?angle4)[$mirror4angle]
+    (_checkMirrors:)
+]
+}
+
+
+:: nothing {"position":"575,1275","size":"100,100"}
+The scale moves. But nothing happens.
+
+[[Go back->scale]] 
+
+
+:: offerings {"position":"1225,1275","size":"100,100"}
+You offer the items.
+
+(click: ?page)+(t8n: "fade-right")|a)[]
+
+|go)[(link-goto: "continue")]
+
+{
+(if: $hasAllItems is true)[
+	(replace: ?a)[
+    	The onryo cursing the shrine has been lifted. A weight on your shoulders has been lifted. You feel a great sense of relief.
+    ]
+    (show: ?go)
+]
+}
+
+
+:: password {"position":"2100,975","size":"100,100"}
+{
+(set: _digit1 to 0)
+(set: _digit2 to 0)
+(set: _digit3 to 0)
+(set: _digit4 to 0)
+}\
+Combination (pw is 024)
+
+|incDig1>[∧] |incDig2>[∧] |incDig3>[∧]
+|digit1>[_digit1] |digit2>[_digit2] |digit3>[_digit3]
+|decDig1>[∨] |decDig2>[∨] |decDig3>[∨]
+
+{
+(link: "Submit")[
+	(if: _digit1 is 0 and _digit2 is 2 and _digit3 is 4)[
+    	(go-to: "maze start")
+    ]
+    (else:)[
+    	(go-to: "password fail")
+    ]
+]
+}
+
+[[Go back->storage room]] 
+
+{
+(set: _changeDigit to (macro: num-type _d, str-type _hook, bool-type _inc, [
+	(if: _inc is true)[(set: _d to it + 1)]
+    (else:)[(set: _d to it - 1)]
+	(if: _d is 10)[(set: _d to 0)]
+    (if: _d is -1)[(set: _d to 9)]
+    (replace: (hooks-named: _hook))[_d]
+    (out-data: _d)
+]))
+
+(click-rerun: ?incDig1)[
+	(set: _digit1 to (_changeDigit: _digit1, "digit1", true))
+]
+(click-rerun: ?incDig2)[(set: _digit2 to (_changeDigit: _digit2, "digit2", true))]
+(click-rerun: ?incDig3)[(set: _digit3 to (_changeDigit: _digit3, "digit3", true))]
+
+(click-rerun: ?decDig1)[(set: _digit1 to (_changeDigit: _digit1, "digit1", false))]
+(click-rerun: ?decDig2)[(set: _digit2 to (_changeDigit: _digit2, "digit2", false))]
+(click-rerun: ?decDig3)[(set: _digit3 to (_changeDigit: _digit3, "digit3", false))]
+
+}
+
+
+
+:: password fail {"position":"2025,1125","size":"100,100"}
+Nothing happened...
+
+[[Go back->password]] 
+
+
+:: prayer cushions {"position":"1725,1075","size":"100,100"}
 The prayer cushions in the prayer room serve as a place for individuals to engage in the ceremony of offering and praying to the deity. The soft and comfortable cushions are arranged in a neat row, inviting visitors to sit and immerse themselves in quiet contemplation. As you observe the room, you notice something intriguing hidden among the cushions—a small, intricately carved amulet. The amulet glimmers softly, hinting at its significance. Its purpose and meaning remain a mystery, but it seems to hold a deeper connection to the prayers offered in this sacred space.
 
 [[The memory fades|prayer room]] as you take a moment to reflect on the spiritual energy emanating from the prayer cushions.
 
 
-:: prayer room {"position":"1600,725","size":"100,100"}
-Walking forward leads you to the prayer room. As you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor. The room is adorned with a [[faint glow|wishing well]] in the center. 
+:: prayer room {"position":"1675,925","size":"100,100"}
+Walking forward leads you to the prayer room. As you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor. The room is adorned with a [[faint glow|wishing well]] in the center.
+
+Theres a large drawing of a deity. There's a hole in the center. There are also some mirrors, with moonlight shining onto one of the [[mirrors->mirror puzzle]].
+
+[[Go back->courtyard]] 
 
 
+:: quick ending 1 {"position":"1000,200","size":"100,100"}
+You try to run away.
 
-:: showers {"position":"1700,500","size":"100,100"}
-As you enter the showers, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.
+[[Next->quick ending 2]] 
 
-The showers reveal themselves to be more than just a place of cleansing. Here, amidst the faded tiles and mildew-covered surfaces, you discover a resource room, filled with tools and items that may aid you in your quest to retrieve the missing items.
+
+:: quick ending 2 {"position":"850,200","size":"100,100"}
+However, when you try to climb out of the crater, you reach midway out of the crater, only to slip, not realizing that you have been cursed.
+
+You fall down, but instead of landing on your feet, you land on your head, causing a fatal injury.
+
+[[Next->quick ending 3]]
+
+
+:: quick ending 3 {"position":"700,200","size":"100,100"}
+The end.
+
+You suck.
+
+
+:: scale {"position":"650,1075","size":"100,100"}
+This scale requires an item.
+
+{
+(if: $hasItem1 is true)[
+	[[Put item 1->nothing]]
+    (text:"\n")
+]
+(if: $hasItem2 is true)[
+	[[Put item 2->something]]
+    (text:"\n")
+]
+(if: $hasItem3 is true)[
+	[[Put item 3->nothing]]
+    (text:"\n")
+]
+(if: $hasItem1 is false and $hasItem2 is false and $hasItem3 is false)[
+	You have nothing to offer.
+     (text:"\n")
+]}
+[[Go Back->kitchen]] 
+
+
+:: something {"position":"725,1275","size":"100,100"}
+You hear an unlocking sound coming from the wooden closets.
+
+[[Go back->scale]] {
+(set:$isBoxUnlocked to true)
+}
+
+
+:: start {"position":"1200,400","size":"100,100"}
+As you explore the abandoned shrine, a sense of solemnity hangs in the air. The remnants of neglect and decay surround you, casting a gloomy shadow over the once revered place. 
+
+[[Go through the Torii Gates->torii gates]]
+
+[[Run Away->quick ending 1]]
+
+
+:: storage room {"position":"2050,800","size":"100,100"}
+As you enter the storage room, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.
+
+The storage room reveal themselves to be more than just a place of storing junk. Here, amidst the faded tiles and mildew-covered surfaces, you discover a resource room, filled with tools and items that may aid you in your quest to retrieve the missing items.
 
 Shelves line the walls, displaying an assortment of aged and worn equipment. Rusty wrenches, frayed ropes, and weathered flashlights catch your attention. These tools, though worn by time and neglect, still possess the potential to assist you in your journey.
 
@@ -162,24 +505,49 @@ With cautious curiosity, you explore the room further, discovering a hidden comp
 
 With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The showers have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
 
-Leaving the resource room behind, you step out of the showers, ready to continue your quest.
+Theres a passcode lock [[here->password]].
+<!--Leaving the resource room behind, you step out of the storage room, ready to continue your quest.-->\
 
-[[go back|continue]]
-
-
-:: turn back {"position":"450,200","size":"100,100"}
-the story ends, you try to climb out of the crater but the shrine deity curses you and you fall to your death
+[[Go back|courtyard]]
 
 
-:: walk towards shrine {"position":"775,350","size":"100,100"}
-With a mixture of curiosity and trepidation, you take a step forward, drawn to the ancient shrine like a moth to a flame. The path feels uneven beneath your feet, overgrown with weeds and obscured by fallen leaves. As you cautiously advance, an unforeseen misstep causes your foot to catch on a hidden root.
+:: torii gates {"position":"1200,550","size":"100,100"}
+Your footsteps echo through the courtyard as you come across an ancient, weathered rock.
 
-Unable to regain your balance, you stumble and lose control. Gravity pulls you downward, and with a startled gasp, you plummet into a hidden pit concealed beneath the earth. The air rushes past you as you fall, the darkness enveloping you completely.
-[[player is trapped]] 
+Suddenly, a voice resounds in your head, filled with accusation and anger. "You! It is your lineage that has caused this ruin!" The words reverberate within you, and you feel a weight of responsibility descend upon your shoulders.
+
+The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation. It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.
+
+[[Go to the courtyard->courtyard]] 
 
 
+:: variables {"position":"1425,575","size":"100,100"}
+{
+(set: _sucgma to "nutz")
 
-:: wishing well {"position":"1800,900","size":"100,100"}
+<!--Main items-->
+(set: $hasAllItems to true)
+(set: $hasRequiredItems to false)
+
+(set: $hasGold to false)
+(set: $hasIncensePot to false)
+(set: $hasPlate to false)
+(set: $hasRobes to false)
+(set: $hasTablet to false)
+
+(set: $dogsunlocked to false)
+
+<!--Kitchen Variables-->
+(set: $hasItem1 to false)
+(set: $hasItem2 to false)
+(set: $hasItem3 to false)
+(set: $isBoxUnlocked to false)
+}
+
+[[offerings]] 
+
+
+:: wishing well {"position":"1600,1075","size":"100,100"}
 As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something glimmering at the bottom—a vital item that holds the power to restore the statue.
 
 At this point, you have two options. You can either backtrack and explore the prayer room further, searching for the necessary tools to retrieve the item from the well's depths. Alternatively, you can attempt to solve a riddle or answer a question posed by the well, providing a different means of obtaining the item.
@@ -187,28 +555,22 @@ At this point, you have two options. You can either backtrack and explore the pr
 [[Return to the prayer room|prayer room]] to search for tools or [[Accept the challenge|wishing well riddle]] and test your wits against the enigmatic query presented by the well. Choose your path wisely, for the fate of the statue's restoration lies in your hands.
 
 
-:: wishing well riddle {"position":"2000,1075","size":"100,100"}
+:: wishing well riddle {"position":"1600,1250","size":"100,100"}
+Take a look at the guardian dogs.
+
+[[Go back->wishing well]] 
+{
+(set: $dogsunlocked to true)
+}
 
 
-
-:: wooden closets {"position":"1275,625","size":"100,100"}
+:: wooden closets {"position":"325,1000","size":"100,100"}
 As you cautiously approach the wooden closets, the musty scent grows stronger. The doors creak open reluctantly, revealing the moth-bitten priest clothes neatly arranged inside. These ceremonial garments, once vibrant and significant, have fallen victim to time's relentless grasp.
 
 You run your fingers over the delicate fabric, feeling the traces of history embedded within each thread. The official name for these clothes is "Kamishimo," a traditional attire worn by shrine priests during rituals and ceremonies. Though now tattered and faded, they still bear a sense of sacredness.
 
-return to the [[living quarters]]
+There is a [[box->examine box]] with something inside.
 
+There is also [[some item->get item 2]] lying on the ground.
 
-:: yes {"position":"1425,1050","size":"100,100"}
-what do you offer up to the shrine?
-
-(here we would need to have an inventory system, make it so players can only offer whats in their inventory)
-
-#depending on the items we can give them a good, neutral, or bad ending
-
-
-[[good ending]]
-
-[[neutral ending]]
-
-[[bad ending]]
+return to the [[living quarters]].
