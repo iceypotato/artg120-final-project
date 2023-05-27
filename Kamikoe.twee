@@ -8,7 +8,7 @@ Kamikoe
   "format": "Harlowe",
   "format-version": "3.3.5",
   "start": "intro",
-  "zoom": 1
+  "zoom": 0.6
 }
 
 
@@ -130,8 +130,7 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 ]
 }
 
-[[Go back->beds]] 
-
+[[Go back->beds]]
 
 
 :: get item 2 {"position":"400,1150","size":"100,100"}
@@ -145,7 +144,7 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 ]
 }
 
-[[Go back->wooden closets]] 
+[[Go back->wooden closets]]
 
 
 :: get item 3 {"position":"800,1075","size":"100,100"}
@@ -159,7 +158,7 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 ]
 }
 
-[[Go back->kitchen]] 
+[[Go back->kitchen]]
 
 
 :: get robes {"position":"2425,1125","size":"100,100"}
@@ -247,7 +246,7 @@ As you enter the living quarters, a somber atmosphere envelopes you. The room ap
 
 To your left, you see the  [[beds]], On the right side of the room you see the [[wooden closets]], Towards the back of the living quarters, you discover the [[kitchen]]
 
-[[Back->courtyard]] 
+[[Back->courtyard]]
 
 
 :: maze fail {"position":"2250,1150","size":"100,100"}
@@ -345,7 +344,7 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 :: nothing {"position":"575,1275","size":"100,100"}
 The scale moves. But nothing happens.
 
-[[Go back->scale]] 
+[[Go back->scale]]
 
 
 :: offerings {"position":"1225,1275","size":"100,100"}
@@ -414,11 +413,10 @@ Combination (pw is 024)
 }
 
 
-
 :: password fail {"position":"2025,1125","size":"100,100"}
 Nothing happened...
 
-[[Go back->password]] 
+[[Go back->password]]
 
 
 :: prayer cushions {"position":"1725,1075","size":"100,100"}
@@ -432,13 +430,13 @@ Walking forward leads you to the prayer room. As you enter, you notice [[large p
 
 Theres a large drawing of a deity. There's a hole in the center. There are also some mirrors, with moonlight shining onto one of the [[mirrors->mirror puzzle]].
 
-[[Go back->courtyard]] 
+[[Go back->courtyard]]
 
 
 :: quick ending 1 {"position":"1000,200","size":"100,100"}
 You try to run away.
 
-[[Next->quick ending 2]] 
+[[Next->quick ending 2]]
 
 
 :: quick ending 2 {"position":"850,200","size":"100,100"}
@@ -475,7 +473,7 @@ This scale requires an item.
 	You have nothing to offer.
      (text:"\n")
 ]}
-[[Go Back->kitchen]] 
+[[Go Back->kitchen]]
 
 
 :: something {"position":"725,1275","size":"100,100"}
@@ -518,7 +516,7 @@ Suddenly, a voice resounds in your head, filled with accusation and anger. "You!
 
 The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation. It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.
 
-[[Go to the courtyard->courtyard]] 
+[[Go to the courtyard->courtyard]]
 
 
 :: variables {"position":"1425,575","size":"100,100"}
@@ -544,7 +542,7 @@ The voice speaks of the improper care the shrine has received, the broken statue
 (set: $isBoxUnlocked to false)
 }
 
-[[offerings]] 
+[[offerings]]
 
 
 :: wishing well {"position":"1600,1075","size":"100,100"}
@@ -574,3 +572,9 @@ There is a [[box->examine box]] with something inside.
 There is also [[some item->get item 2]] lying on the ground.
 
 return to the [[living quarters]].
+
+
+:: StoryStylesheet [stylesheet]
+tw-sidebar {
+	display: none;
+}
