@@ -291,10 +291,23 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 
 
 :: mirror puzzle {"position":"1850,1075","size":"100,100"}
-|mirror1>[rotate mirror 1: ]|angle1>[$mirror1angle]
-|mirror2>[rotate mirror 2: ]|angle2>[$mirror2angle]
-|mirror3>[rotate mirror 3: ]|angle3>[$mirror3angle]
-|mirror4>[rotate mirror 4: ]|angle4>[$mirror4angle]
+It seems like you need to rotate mirrors lmao
+
+🌕
+|beam1>[┃
+┃
+┃
+┃
+┃
+┃]
+|mirror1>[🪞]──────|mirror2>[🪞] |mirror4>[🪞]
+                                                   ┃
+                                                   ┃
+                                                   ┃
+                                                   ┃
+                                                   ┃
+											    |mirror3>[🪞]
+🖼️
 
 [[Go back->prayer room]]
 
@@ -305,10 +318,13 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 (set: $mirror3angle to 0)
 (set: $mirror4angle to 0)
 
-(set: _changeAngle to (macro: num-type _angle, [
-	(if: _angle is 315)[(set: _angle to 0)]
-    (else:)[(set: _angle to it + 45)]
-	(outdata: _angle)
+(set: _changeAngle to (macro: num-type _angle, str-type _hookname, [
+	(set: _angle to it - 45)
+	(if: _angle is -360)[(set: _angle to 0)]
+    (replace: (hooks-named: _hookname))[\
+    	(text-rotate-z: _angle)[🪞]\
+    ]
+    (outdata: _angle)
 ]))
 
 (set:_checkMirrors to (macro: [
@@ -319,22 +335,21 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 ]))
 
 (click-rerun: ?mirror1)[
-    (set: $mirror1angle to (_changeAngle: $mirror1angle))
-    (replace: ?angle1)[$mirror1angle]
+    (set: $mirror1angle to (_changeAngle: $mirror1angle, "mirror1"))
     (_checkMirrors:)
 ]
 (click-rerun: ?mirror2)[
-    (set: $mirror2angle to (_changeAngle: $mirror2angle))
+    (set: $mirror2angle to (_changeAngle: $mirror2angle, "mirror2"))
     (replace: ?angle2)[$mirror2angle]
     (_checkMirrors:)
 ]
 (click-rerun: ?mirror3)[
-	(set: $mirror3angle to (_changeAngle: $mirror3angle))
+	(set: $mirror3angle to (_changeAngle: $mirror3angle, "mirror3"))
     (replace: ?angle3)[$mirror3angle]
     (_checkMirrors:)
 ]
 (click-rerun: ?mirror4)[
-	(set: $mirror4angle to (_changeAngle: $mirror4angle))
+	(set: $mirror4angle to (_changeAngle: $mirror4angle, "mirror4"))
     (replace: ?angle4)[$mirror4angle]
     (_checkMirrors:)
 ]
