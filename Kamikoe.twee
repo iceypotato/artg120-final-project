@@ -55,7 +55,7 @@ With the item securely in your possession, you take a moment to reflect on the r
 
 You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
 
-[[There is something on the bed.->get item 1]]
+[[There is something on the bed.|photograph]]
 
 [[Return to the living quarters|living quarters]]
 
@@ -119,63 +119,7 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 }
 
 
-:: get item 1 {"position":"50,1075","size":"100,100"}
-{
-(if:$hasItem1 is false)[
-	You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
-
-Upon closer examination, you realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
-
-As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.
-
-With the photo now safely in your possession, you continue your exploration, fueled by the desire to uncover the secrets of your family's past and the abandoned shrine.
-    (set: $hasItem1 to true)
-]
-(else:)[
-	There is nothing else.
-]
-}
-
-[[Go back->beds]]
-
-
-:: get item 2 {"position":"400,1150","size":"100,100"}
-{
-(if:$hasItem2 is false)[
-	You carefully retrieve the scented sachet, marveling at its exquisite craftsmanship. The delicate threads create a mesmerizing pattern, and the colors still retain their vibrancy despite the passage of time. Gently squeezing the sachet, you feel the softness of the fabric and hear a faint rustling of the herbal ingredients contained within.
-
-As you inhale the aromatic scent, memories flood your mind. You are transported back to your childhood, in the kitchen of your grandparents' home. The room is filled with the fragrant aroma of fresh herbs, as your grandmother expertly prepares remedies and potions. The scented sachet in your hands reminds you of the countless hours spent by her side, learning about the healing properties of different plants and herbs.
-
-You remember how your grandmother would carefully select each ingredient, considering its unique properties and the purpose it would serve. She would explain their uses, passing down her knowledge from generation to generation. The scented sachet was a symbol of her wisdom, her connection to nature, and her dedication to healing.
-
-As you hold the sachet, you can't help but feel a sense of gratitude for the memories and the knowledge that has been passed down to you. You realize that this item may hold more than just its enchanting aroma; it might be the key to unlocking a puzzle or providing insights into the mysteries of the abandoned shrine.
-
-With the scented sachet now in your possession, you continue your exploration, eager to uncover the secrets hidden within the shrine and to honor the wisdom and traditions of your ancestors.
-    (set: $hasItem2 to true)
-]
-(else:)[
-	There is nothing else interesting.
-]
-}
-
-[[Go back->wooden closets]]
-
-
-:: get item 3 {"position":"800,1075","size":"100,100"}
-{
-(if:$hasItem3 is false)[
-	You pick up a rice bowl of some sort. It's intricate.
-    (set: $hasItem3 to true)
-]
-(else:)[
-	there is nothing else here.
-]
-}
-
-[[Go back->kitchen]]
-
-
-:: get robes {"position":"2425,1125","size":"100,100"}
+:: get robes {"position":"2350,875","size":"100,100"}
 You found some robes. It seems important.
 
 [[Go back->storage room]]\
@@ -184,7 +128,7 @@ You found some robes. It seems important.
 }
 
 
-:: gold ingot {"position":"1850,1200","size":"100,100"}
+:: gold ingot {"position":"1850,1050","size":"100,100"}
 You get a gold ingot. It looks important.
 
 [[Go back->prayer room]] 
@@ -242,12 +186,12 @@ As you step into the kitchen, a vivid memory unfurls before your eyes. You find 
 
 There is a [[scale]] of some sort.
 
-There is a [[heavy item->get item 3]] of some sort.
+There is a [[heavy item->rice bowl]] of some sort.
 
 you return to the [[living quarters]]
 
 
-:: large pots of incense {"position":"1475,1075","size":"100,100"}
+:: large pots of incense {"position":"1475,1000","size":"100,100"}
 The large pots of incense in the prayer room evoke a memory of preparing fragrant offerings to the deity. Each pot is adorned with intricate patterns and symbols, representing different aspects of worship and spirituality. The air is filled with a soothing aroma as the incense slowly burns, creating a serene atmosphere for prayer and reflection.
 
 As you examine the pots more closely, you notice that one of them is missing. It seems like a crucial component is absent from the array of offerings. The missing incense pot raises questions and piques your curiosity. Could it hold a clue or possess a special significance?
@@ -267,7 +211,7 @@ To your left, you see the  [[beds]], On the right side of the room you see the [
 You fell, though you lived. You [[go back->maze start]] to where you started.
 
 
-:: maze start {"position":"2300,1000","size":"100,100"}
+:: maze start {"position":"2225,975","size":"100,100"}
 {
 (set: _step to 0)
 }\
@@ -309,16 +253,16 @@ As you examine the passcode lock, a wave of nostalgia washes over you, triggerin
 
 In this memory, youare shown a moment of quiet contemplation as you watched your grandparents light incense and offer prayers at the shrine. Your eyes wandered to the ornate calligraphy hanging on the wall, displaying a quote from a revered ancestor: "To find what's lost, seek the path of the forgotten."
 
-Suddenly, you realize that this memory might hold a clue to the passcode. The phrase "path of the forgotten" stands out to you. You ponder its significance as you glance around the room, searching for any hints or connections to this phrase.
+You realize that this memory might hold a clue to the passcode. The phrase "path of the forgotten" stands out to you. You ponder its significance as you glance around the room, searching for any hints or connections to this phrase.
 
-Your gaze falls upon a worn-out notebook resting on one of the shelves. Opening it, you discover a faded page with handwritten notes. And there it is, subtly embedded in the faded lines and symbols on the map, the numbers 024
+Your gaze falls upon a worn-out notebook resting on one of the shelves. Opening it, you discover a faded page with handwritten notes. And there it is, subtly embedded in the faded lines and symbols on the map, the numbers 024.
 
 
 [[Memory ends->password]] 
-[[Go back->storage room]] 
+[[Go back->storage room]]
 
 
-:: mirror puzzle {"position":"1850,1075","size":"100,100"}
+:: mirror puzzle {"position":"1925,900","size":"100,100"}
 It seems like you need to rotate mirrors lmao
 
 🌕
@@ -469,6 +413,26 @@ Nothing happened...
 [[Go back->password]]
 
 
+:: photograph {"position":"50,1100","size":"100,100"}
+{
+(if:$hasItem1 is false)[
+	You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
+
+Upon closer examination, you realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
+
+As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.
+
+With the photo now safely in your possession, you continue your exploration, fueled by the desire to uncover the secrets of your family's past and the abandoned shrine.
+    (set: $hasItem1 to true)
+]
+(else:)[
+	There is nothing else.
+]
+}
+
+[[Go back->beds]]
+
+
 :: prayer cushions {"position":"1725,1075","size":"100,100"}
 The prayer cushions in the prayer room serve as a place for individuals to engage in the ceremony of offering and praying to the deity. The soft and comfortable cushions are arranged in a neat row, inviting visitors to sit and immerse themselves in quiet contemplation. As you observe the room, you notice something intriguing hidden among the cushions—a small, intricately carved amulet. The amulet glimmers softly, hinting at its significance. Its purpose and meaning remain a mystery, but it seems to hold a deeper connection to the prayers offered in this sacred space.
 
@@ -503,6 +467,20 @@ The end.
 You suck.
 
 
+:: rice bowl {"position":"800,1075","size":"100,100"}
+{
+(if:$hasItem3 is false)[
+	You pick up a rice bowl of some sort. It's intricate. As you trace the beautiful design on the edge of the bowl, you begin to notice a pattern. The design seems to be a repetition of the number 7.
+    (set: $hasItem3 to true)
+]
+(else:)[
+	there is nothing else here.
+]
+}
+
+[[Go back->kitchen]]
+
+
 :: scale {"position":"650,1075","size":"100,100"}
 This scale requires an item.
 
@@ -524,6 +502,28 @@ This scale requires an item.
      (text:"\n")
 ]}
 [[Go Back->kitchen]]
+
+
+:: scented sachet {"position":"400,1150","size":"100,100"}
+{
+(if:$hasItem2 is false)[
+	You carefully retrieve the scented sachet, marveling at its exquisite craftsmanship. The delicate threads create a mesmerizing pattern, and the colors still retain their vibrancy despite the passage of time. Gently squeezing the sachet, you feel the softness of the fabric and hear a faint rustling of the herbal ingredients contained within.
+
+As you inhale the aromatic scent, memories flood your mind. You are transported back to your childhood, in the kitchen of your grandparents' home. The room is filled with the fragrant aroma of fresh herbs, as your grandmother expertly prepares remedies and potions. The scented sachet in your hands reminds you of the countless hours spent by her side, learning about the healing properties of different plants and herbs.
+
+You remember how your grandmother would carefully select each ingredient, considering its unique properties and the purpose it would serve. She would explain their uses, passing down her knowledge from generation to generation. The scented sachet was a symbol of her wisdom, her connection to nature, and her dedication to healing.
+
+As you hold the sachet, you can't help but feel a sense of gratitude for the memories and the knowledge that has been passed down to you. You realize that this item may hold more than just its enchanting aroma; it might be the key to unlocking a puzzle or providing insights into the mysteries of the abandoned shrine.
+
+With the scented sachet now in your possession, you continue your exploration, eager to uncover the secrets hidden within the shrine and to honor the wisdom and traditions of your ancestors.
+    (set: $hasItem2 to true)
+]
+(else:)[
+	There is nothing else interesting.
+]
+}
+
+[[Go back->wooden closets]]
 
 
 :: something {"position":"725,1275","size":"100,100"}
@@ -551,7 +551,7 @@ Shelves line the walls, displaying an assortment of aged and worn equipment. Rus
 
 With cautious curiosity, you explore the room further, discovering a hidden compartment that holds additional resources. Inside, you find a tattered map, its faded markings hinting at secret passages and hidden chambers within the shrine. This newfound knowledge may prove invaluable as you navigate the shrine's depths.
 
-With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The showers have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
+With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The storage rooms have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
 
 Theres a passcode lock [[here->memory]].
 
@@ -571,7 +571,7 @@ The voice speaks of the improper care the shrine has received, the broken statue
 [[Go to the courtyard->courtyard]]
 
 
-:: variables {"position":"1425,575","size":"100,100"}
+:: variables {"position":"825,550","size":"100,100"}
 {
 (set: _sucgma to "nutz")
 
@@ -597,16 +597,16 @@ The voice speaks of the improper care the shrine has received, the broken statue
 [[offerings]]
 
 
-:: wishing well {"position":"1600,1075","size":"100,100"}
-As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something glimmering at the bottom—a vital item that holds the power to restore the statue.
+:: wishing well {"position":"1575,1100","size":"100,100"}
+As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something glimmering at the bottom—a vital clue that holds the power to restore the statue.
 
 At this point, you have two options. You can either backtrack and explore the prayer room further, searching for the necessary tools to retrieve the item from the well's depths. Alternatively, you can attempt to solve a riddle or answer a question posed by the well, providing a different means of obtaining the item.
 
 [[Return to the prayer room|prayer room]] to search for tools or [[Accept the challenge|wishing well riddle]] and test your wits against the enigmatic query presented by the well. Choose your path wisely, for the fate of the statue's restoration lies in your hands.
 
 
-:: wishing well riddle {"position":"1600,1250","size":"100,100"}
-Take a look at the guardian dogs.
+:: wishing well riddle {"position":"1700,1225","size":"100,100"}
+Between two doors lie the protectors of this sanctuary. Choose the right one to recieve what you seek.
 
 [[Go back->wishing well]] 
 {
@@ -621,7 +621,7 @@ You run your fingers over the delicate fabric, feeling the traces of history emb
 
 There is a [[box->examine box]] with something inside.
 
-There is also [[some item->get item 2]] lying on the ground.
+There is also [[some item->scented sachet]] lying on the ground.
 
 return to the [[living quarters]].
 
