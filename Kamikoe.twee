@@ -295,19 +295,18 @@ It seems like you need to rotate mirrors lmao
 
 🌕
 |beam1>[┃
-┃
-┃
-┃
-┃
-┃]
-|mirror1>[🪞]──────|mirror2>[🪞] |mirror4>[🪞]
-                                                   ┃
-                                                   ┃
-                                                   ┃
-                                                   ┃
-                                                   ┃
-											    |mirror3>[🪞]
-🖼️
+｜
+｜
+｜　　　　　　　　　　　🖼️
+｜　　　　　　|beam5>[　　　　　　]
+｜　　　　　　|beam5>[　　　　　　]]
+|mirror1>[🪞]|beam2>[　　　　]|mirror2>[🪞] |beam5>[　　　　　　]
+|beam3>[　　　　　　　]|beam5>[　　　　　　]
+|beam3>[　　　　　　　]|beam5>[　　　　　　]
+|beam3>[　　　　　　　]|beam5>[　　　　　　]
+|beam3>[　　　　　　　]|beam5>[　　　　　　]
+|beam3>[　　　　　　　]|beam5>[　　　　　　]
+　　　　　|mirror3>[🪞]|beam4>[　　　　　]|mirror4>[🪞]
 
 [[Go back->prayer room]]
 
@@ -328,7 +327,15 @@ It seems like you need to rotate mirrors lmao
 ]))
 
 (set:_checkMirrors to (macro: [
-	(if: $mirror1angle is 45 and $mirror2angle is 225 and $mirror3angle is 135 and $mirror4angle is 45)[
+    (if: $mirror1angle is -45)[(replace: ?beam2)[━━━━]]
+    (else:)[(replace:?beam2)[(text:"　　　　")]]
+    (if: $mirror2angle is -225 and $mirror1angle is -45)[(replace: ?beam3)[(text:"　　　　　　")｜]]
+    (else:)[(replace:?beam3)[(text:"　　　　　　　")]]
+    (if: $mirror3angle is -45 and $mirror2angle is -225 and $mirror1angle is -45)[(replace: ?beam4)[━━━━]]
+	(else:)[(replace:?beam4)[(text:"　　　　")]]
+    (if: $mirror4angle is -135 and $mirror3angle is -45 and $mirror2angle is -225 and $mirror1angle is -45)[(replace: ?beam5)[(text:"　　　　　")｜]]
+    (else:)[(replace: ?beam5)[(text:"　　　　　　")]]
+	(if: $mirror1angle is -45 and $mirror2angle is -225 and $mirror3angle is -45 and $mirror4angle is -135)[
 		(out:)[(show: ?unlock)]
    ]
     (out:)[]
@@ -345,8 +352,8 @@ It seems like you need to rotate mirrors lmao
 ]
 (click-rerun: ?mirror3)[
 	(set: $mirror3angle to (_changeAngle: $mirror3angle, "mirror3"))
-    (replace: ?angle3)[$mirror3angle]
-    (_checkMirrors:)
+	(replace: ?angle3)[$mirror3angle]
+	(_checkMirrors:)
 ]
 (click-rerun: ?mirror4)[
 	(set: $mirror4angle to (_changeAngle: $mirror4angle, "mirror4"))
