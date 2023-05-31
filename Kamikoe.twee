@@ -122,7 +122,13 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 :: get item 1 {"position":"50,1075","size":"100,100"}
 {
 (if:$hasItem1 is false)[
-	There is a photo. You collect it.
+	You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
+
+Upon closer examination, you realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
+
+As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.
+
+With the photo now safely in your possession, you continue your exploration, fueled by the desire to uncover the secrets of your family's past and the abandoned shrine.
     (set: $hasItem1 to true)
 ]
 (else:)[
@@ -136,7 +142,15 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 :: get item 2 {"position":"400,1150","size":"100,100"}
 {
 (if:$hasItem2 is false)[
-	You see an item on the ground. You pick it up.
+	You carefully retrieve the scented sachet, marveling at its exquisite craftsmanship. The delicate threads create a mesmerizing pattern, and the colors still retain their vibrancy despite the passage of time. Gently squeezing the sachet, you feel the softness of the fabric and hear a faint rustling of the herbal ingredients contained within.
+
+As you inhale the aromatic scent, memories flood your mind. You are transported back to your childhood, in the kitchen of your grandparents' home. The room is filled with the fragrant aroma of fresh herbs, as your grandmother expertly prepares remedies and potions. The scented sachet in your hands reminds you of the countless hours spent by her side, learning about the healing properties of different plants and herbs.
+
+You remember how your grandmother would carefully select each ingredient, considering its unique properties and the purpose it would serve. She would explain their uses, passing down her knowledge from generation to generation. The scented sachet was a symbol of her wisdom, her connection to nature, and her dedication to healing.
+
+As you hold the sachet, you can't help but feel a sense of gratitude for the memories and the knowledge that has been passed down to you. You realize that this item may hold more than just its enchanting aroma; it might be the key to unlocking a puzzle or providing insights into the mysteries of the abandoned shrine.
+
+With the scented sachet now in your possession, you continue your exploration, eager to uncover the secrets hidden within the shrine and to honor the wisdom and traditions of your ancestors.
     (set: $hasItem2 to true)
 ]
 (else:)[
@@ -290,6 +304,20 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 }
 
 
+:: memory {"position":"2050,1025","size":"100,100"}
+As you examine the passcode lock, a wave of nostalgia washes over you, triggering a vivid memory from one of the previous keepers. You remember a time when your family would gather around the family shrine, honoring the traditions passed down through generations.
+
+In this memory, youare shown a moment of quiet contemplation as you watched your grandparents light incense and offer prayers at the shrine. Your eyes wandered to the ornate calligraphy hanging on the wall, displaying a quote from a revered ancestor: "To find what's lost, seek the path of the forgotten."
+
+Suddenly, you realize that this memory might hold a clue to the passcode. The phrase "path of the forgotten" stands out to you. You ponder its significance as you glance around the room, searching for any hints or connections to this phrase.
+
+Your gaze falls upon a worn-out notebook resting on one of the shelves. Opening it, you discover a faded page with handwritten notes. And there it is, subtly embedded in the faded lines and symbols on the map, the numbers 024
+
+
+[[Memory ends->password]] 
+[[Go back->storage room]] 
+
+
 :: mirror puzzle {"position":"1850,1075","size":"100,100"}
 It seems like you need to rotate mirrors lmao
 
@@ -386,7 +414,7 @@ You offer the items.
 }
 
 
-:: password {"position":"2100,975","size":"100,100"}
+:: password {"position":"2050,1175","size":"100,100"}
 {
 (set: _digit1 to 0)
 (set: _digit2 to 0)
@@ -410,7 +438,7 @@ Combination (pw is 024)
 ]
 }
 
-[[Go back->storage room]] 
+[[Go back->memory]] 
 
 {
 (set: _changeDigit to (macro: num-type _d, str-type _hook, bool-type _inc, [
@@ -435,7 +463,7 @@ Combination (pw is 024)
 }
 
 
-:: password fail {"position":"2025,1125","size":"100,100"}
+:: password fail {"position":"2050,1375","size":"100,100"}
 Nothing happened...
 
 [[Go back->password]]
@@ -525,7 +553,9 @@ With cautious curiosity, you explore the room further, discovering a hidden comp
 
 With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The showers have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
 
-Theres a passcode lock [[here->password]].
+Theres a passcode lock [[here->memory]].
+
+
 <!--Leaving the resource room behind, you step out of the storage room, ready to continue your quest.-->\
 
 [[Go back|courtyard]]
