@@ -49,13 +49,12 @@ Help the deity understand what happened and they will no longer seek vengeance o
 :: beds {"position":"50,950","size":"100,100"}
 As you approach the beds, a bittersweet memory begins to play out in your mind. You catch glimpses of the past, a time when the shrine priests lived joyfully within these walls. Laughter echoes through the air, and the sound of prayers being offered resonates with warmth and devotion.
 
-Amidst the recollections, you spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing an item that holds significance in your quest. This newfound discovery serves as a reminder of the intricate interplay between past and present, urging you to carry the torch of your ancestors and restore the shrine to its former glory.
+Looking around the room, you notice a trail of dried blood on the floor, leading to one of the beds. 
 
-With the item securely in your possession, you take a moment to reflect on the resilience of your lineage and the weight of responsibility that rests upon your shoulders. The journey ahead is not an easy one, but with each step, you grow closer to fulfilling your duty and healing the shrine.
-
-You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
 
 [[There is something on the bed.|photograph]]
+
+You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
 
 [[Return to the living quarters|living quarters]]
 
@@ -103,7 +102,15 @@ There are a pair of |dogs>[guard dogs], and an [[Ema->ema]] to look at.
 
 
 :: examine box {"position":"225,1150","size":"100,100"}
-|unlocked)[Lost in the recollection, your gaze falls upon a small, hidden compartment tucked away within the kitchen. Intrigued, you carefully open it, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
+|unlocked)[Your gaze falls upon a small, hidden compartment tucked away within the closet. It's appearance feels familiar to you. With a gasp, you remember where you've seen the same hidden compartment before. 
+
+You were always a curious toddler, and once, you were playing hide and seek with the other shrine children. You hid underneath the bed, certain that none of the other children would check there.
+
+As you were waiting to be found, your grandfather came running in, carrying something in his hands and muttering about needing more strength. You remember seeing him open this same closet and crouch down, placing that item in his hands in the closet. 
+
+Later that evening, you remember the shrine becoming agitated over a lost artifact, but you can't quite remember what it was.
+
+Intrigued by what your grandfather could have hid, you carefully open the compartment, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
 
 You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.]\
 
@@ -416,9 +423,13 @@ Nothing happened...
 :: photograph {"position":"50,1100","size":"100,100"}
 {
 (if:$hasItem1 is false)[
-	You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
+	You spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing a photograph.
+    
+    You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
 
-Upon closer examination, you realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
+A closer inspection of the photo reveals bloody fingerprints along the edges of the image. Perhaps this was a treasure of a shrine preist before they met their unfortunate demise. 
+
+You realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
 
 As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.
 
@@ -571,7 +582,7 @@ The voice speaks of the improper care the shrine has received, the broken statue
 [[Go to the courtyard->courtyard]]
 
 
-:: variables {"position":"825,550","size":"100,100"}
+:: variables {"position":"775,575","size":"100,100"}
 {
 (set: _sucgma to "nutz")
 
