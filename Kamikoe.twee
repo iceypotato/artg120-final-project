@@ -7,30 +7,20 @@ Kamikoe
   "ifid": "15AA5A1E-D9FB-4F9E-91FB-D11F676A07B7",
   "format": "Harlowe",
   "format-version": "3.3.5",
-  "start": "intro 1",
+  "start": "title",
   "zoom": 0.6
 }
 
 
-:: Testing {"position":"600,100","size":"100,100"}
-|a>[abcasdfass(color:red)[f]ds]
-
-|replaceme>[]
-
-|b)[lgima]
-
+:: Testing {"position":"600,400","size":"100,100"}
 {
 (set: _arr to (array:1,2,3,4,6))
-<!--(click: ?page)[
-	(show: ?b)
-	(enchant: ?b's chars, via (t8n-delay:pos * 60) + (t8n-skip:100s) +(t8n:'instant'))
-]-->
-
-<!--(replace: ?a's chars)[(t8n-delay:1000)+(t8n:'fade')[(hooks-named: "a")]]-->
-
-(set: _typewrite2 to (macro: str-type _hookname, num-type _speed, [
-	(show: (hooks-named: _hookname))
-	(enchant: (hooks-named: _hookname)'s chars, via (t8n-delay:pos * _speed) + (t8n-skip:1000s) + (t8n:'instant'))
+<!--(for: each _c, _arr)[_c]-->
+(set: $twdelay to 0)
+(set: _typewrite2 to (macro: str-type _hookname, num-type _delay, [
+	(set: $twdelay to _delay)
+    (show: (hooks-named: _hookname))
+	(enchant: (hooks-named: _hookname)'s chars, via (t8n-delay:pos * $twdelay) + (t8n-skip:1000s) + (t8n:'instant'))
     (out:)[]
 ]))
 
@@ -45,64 +35,67 @@ Kamikoe
 	(out:)[]
 ]))
 
+}\
+(t8n:"fade-right")[|a>[abcasdfass(color:red)[f]ds](_typewrite2: "a", 60)]
+
+(click:?page)[|replaceme>[asdjmkfgsa (text-color:red)[ylifadusfh] sauil fsadhl fuisf](_typewrite2: "replaceme", 60)]
+
+|b)[ballz]
+{
+
 }
 
 
-:: armor {"position":"2625,675","size":"100,100"}
-As you stand among the bloodstained armor, a flood of memories rushes through your mind, transporting you to a time of war and devastation. Images of injured soldiers seeking sanctuary and aid fill your thoughts, their faces etched with pain, determination, and the indomitable human spirit.
+:: armor {"position":"3500,1100","size":"100,100"}
+(t8n:"fade-right")[As you stand among the bloodstained armor, a flood of memories rushes through your mind, transporting you to a time of war and devastation. Images of injured soldiers seeking sanctuary and aid fill your thoughts, their faces etched with pain, determination, and the indomitable human spirit.]
 
-As you reflect on these memories, you are reminded of the immense sacrifices made by those who fought in wars. The bloodstained weapons and armor in the storage room bear witness to the trials endured and the lives forever changed. They serve as a solemn reminder of the human cost of conflict and the strength of those who persevered despite unimaginable hardships.
+(click:?page)+(t8n:"fade-right")[As you reflect on these memories, you are reminded of the immense sacrifices made by those who fought in wars. The bloodstained weapons and armor in the storage room bear witness to the trials endured and the lives forever changed. They serve as a solemn reminder of the human cost of conflict and the strength of those who persevered despite unimaginable hardships.
 
-[[Go back|weapons and armor]]
-
-
-:: beds {"position":"325,875","size":"100,100"}
-As you approach the beds, a bittersweet memory begins to play out in your mind. You catch glimpses of the past, a time when the shrine priests lived joyfully within these walls. Laughter echoes through the air, and the sound of prayers being offered resonates with warmth and devotion.
-
-Looking around the room, you notice a trail of dried blood on the floor, leading to one of the beds. 
+[[Go back|weapons and armor]]]
 
 
-[[There is something on the bed.|photograph]]
+:: beds {"position":"100,1000","size":"100,100"}
+(t8n:"fade-right")[The walls, once adorned with vibrant tapestries and murals, now bear faded remnants of their former glory. The paint has chipped away in places, revealing the decaying plaster beneath. Cobwebs stretch across the corners, serving as a testament to the years of neglect. In the center of the room stands a dilapidated bed, its wooden frame creaking under the weight of forgotten dreams. ]
 
-You decide to leave the beds behind for now and return to the living quarters, your mind filled with determination and purpose.
+(click:?page)+(t8n:"fade-right")[Looking around the room, you notice a trail of dried blood on the floor, leading to one of the beds. There seems to be something [[on the bed.|photograph]]
 
-[[Return to the living quarters|living quarters]]
-
-
-:: book {"position":"2475,750","size":"100,100"}
-The book's cover shows signs of age, its once vibrant colors faded by time. The edges of the pages are frayed and yellowed, hinting at the countless hands that have turned them over the years.
-
-As you flip through the pages of the worn book, your fingers tracing the faded words and illustrations, you reach the end. Curiosity compels you to glance at the final pages, and there, tucked away near the back, you notice something intriguing. Amongst the final paragraphs and notes, a small handwritten number catches your eye: a number 7.
-
-It seems inconspicuous at first, a mere digit on the page, but a spark of recognition ignites within you. Could this number hold significance?
-
-[[Go back->storage room]] 
+[[Go back|living quarters]]]
 
 
-:: continue {"position":"1225,1400","size":"100,100"}
-There is a person, kneeling in front the statue that was once broken. 
+:: book {"position":"3200,900","size":"100,100"}
+(t8n:"fade-right")[The book's cover shows signs of age, its once vibrant colors faded by time. The edges of the pages are frayed and yellowed, hinting at the countless hands that have turned them over the years.]
 
-There, those items that you collected were also present.
+(click:?page)+(t8n:"fade-right")[As you flip through the pages of the worn book, your fingers tracing the faded words and illustrations, you reach the end. Curiosity compels you to glance at the final pages, and there, tucked away near the back, you notice something intriguing. Amongst the final paragraphs and notes, a small handwritten number catches your eye: a number 7.]
 
-The man prays, and the memory fades away.
+(click:?page)+(t8n:"fade-right")[It seems inconspicuous at first, a mere digit on the page, but a spark of recognition ignites within you. Could this number hold significance?
 
-You leave the shrine. Although, not all your questions have not been answered. You leave with a sense of relief, a sense that you have done something good, and have calmed a raging spirit.
+[[Go back->storage room]]]
 
-''The End''
+
+:: continue {"position":"1500,1100","size":"100,100"}
+(t8n:"fade-right")[There is a person, kneeling in front the statue that was once broken.]
+
+(click:?page)+(t8n:"fade-right")[There, those items that you collected were also present.]
+
+(click:?page)+(t8n:"fade-right")[The man prays, and the memory fades away.]
+
+(click:?page)+(t8n:"fade-right")[You leave the shrine. Although, not all your questions have not been answered. You leave with a sense of relief, a sense that you have done something good, and have calmed a raging spirit.]
+
+(click:?page)+(t8n:"fade-right")[[[''The End''->credits]]]
 
 
 :: courtyard {"position":"1500,550","size":"100,100"}
-The deity's warning lingers in your mind, a constant reminder of the grave consequences that await failure. With a deep breath, you gather your resolve and survey the shrine before you. Three pathways stretch out, each holding its own mysteries and potential dangers.
+(t8n:"fade-right")[The deity's warning lingers in your mind, a constant reminder of the grave consequences that await failure. With a deep breath, you gather your resolve and survey the shrine before you. Three pathways stretch out, each holding its own mysteries and potential dangers.]
 
-To the left, you see the entrance to the [[living quarters]], once inhabited by your ancestors who faithfully cared for the shrine. Though the passage may hold clues to the missing items, it also carries the weight of their secrets and hidden perils.
+(click:?page)+(t8n:"fade-right")[To the left, you see the entrance to the [[living quarters]], once inhabited by your ancestors who faithfully cared for the shrine. Though the passage may hold clues to the missing items, it also carries the weight of their secrets and hidden perils.]
 
-Straight ahead lies the [[prayer room]], a place of reverence and spiritual connection. The air is thick with ancient energy, and the room beckons you to uncover its sacred knowledge. Here, the answers you seek may reveal themselves through prayers whispered in the hallowed space.
+(click:?page)+(t8n:"fade-right")[Straight ahead lies the [[prayer room]], a place of reverence and spiritual connection. The air is thick with ancient energy, and the room beckons you to uncover its sacred knowledge. Here, the answers you seek may reveal themselves through prayers whispered in the hallowed space.]
 
-To the right, you find yourself drawn towards the [[storage room]]. In the dim light, water droplets echo, creating an eerie melody. The dampness hangs in the air, a stark contrast to the shrine's arid surroundings.
+(click:?page)+(t8n:"fade-right")[To the right, you find yourself drawn towards the [[storage room]]. In the dim light, water droplets echo, creating an eerie melody. The dampness hangs in the air, a stark contrast to the shrine's arid surroundings.]
 
-There are a pair of |dogs>[guard dogs], and an [[ema->ema]] to look at.
+(click:?page)+(t8n:"fade-right")[There are a pair of |dogs>[guard dogs], and an [[ema->ema]] to look at.]
 
-|present)[It seems like there are enough items to present to the statue. [[do it?->offerings]]]\
+|present)[(click:?page)+(t8n:"fade-right")[It seems like there are enough items to present to the statue. [[do it?->offerings]]]]\
 
 {
 (if: $hasGold is true and $hasIncensePot is true and $hasPlate is true and $hasRobes is true and $hasTablet is true)[
@@ -117,44 +110,70 @@ There are a pair of |dogs>[guard dogs], and an [[ema->ema]] to look at.
 }
 
 
-:: ema {"position":"1400,700","size":"100,100"}
-(if: $hasTablet is false)[
-\There a bunch of tablets scattered around, but one catches your eye.
+:: credits {"position":"1500,1300","size":"100,100"}
+(t8n:"fade-right")+(color:magenta)[\
+(text-size:2)[''Credits:'']]
 
-Written on it, is some ommnious chant, written in what seems to be like blood.
+(t8n:"fade-right")[''Made with sweat and tears by these idiots.'']
 
-It seems to have something to do with worshipping a god.
+(t8n:"fade-right")+(color:blue)[''Nicholas
+Amber
+Kayla'']
 
-You take it.
+(t8n:"fade-right")[''Programming in Harlowe is a pain.'']
 
-Suddenly, there's an image of a man writing something down on what appears to be a tablet. You cannot make out what it says, but it is a wish of some kind.
+(t8n:"fade-right")[[[Play Again->title]]]
+
+
+:: ema {"position":"1300,700","size":"100,100"}
+|nohas)[
+\(t8n:"fade-right")[There a bunch of tablets scattered around, but one catches your eye.]
+
+(click:?page)+(t8n:"fade-right")[Written on it, is some ommnious chant, written in what seems to be like blood.]
+
+(click:?page)+(t8n:"fade-right")[It seems to have something to do with worshipping a god.]
+
+(click:?page)+(t8n:"fade-right")[You take it.]
+
+(click:?page)+(t8n:"fade-right")[Suddenly, there's an image of a man writing something down on what appears to be a tablet. You cannot make out what it says, but it is a wish of some kind.(show:?back)]
 ]\
-(else:)[There are more wooden plates, but nothing catches your eye. There is nothing else to see here.]
+|has)[(t8n:"fade-right")[There are more wooden plates, but nothing catches your eye. There is nothing else to see here.](show:?back)]
 
-[[Go back->courtyard]]
+|back)[(t8n:"fade-right")[[[Go back->courtyard]]]]
 {
-(set: $hasTablet to true)
+(if: $hasTablet is false)[
+	(set: $hasTablet to true)
+    (show:?nohas)
+]
+(else:)[
+	(show:?has)
+]
 }
 
 
-:: examine box {"position":"225,1150","size":"100,100"}
-|unlocked)[Your gaze falls upon a small, hidden compartment tucked away within the closet. It's appearance feels familiar to you. With a gasp, you remember where you've seen the same hidden compartment before. 
+:: examine box {"position":"350,1200","size":"100,100"}
+|unlocked)[(t8n:"fade-right")[Your gaze falls upon a small, hidden compartment tucked away within the closet. It's appearance feels familiar to you. With a gasp, you remember where you've seen the same hidden compartment before.]
 
-You were always a curious toddler, and once, you were playing hide and seek with the other shrine children. You hid underneath the bed, certain that none of the other children would check there.
+(click: ?page)+(t8n:"fade-right")[You were always a curious toddler, and once, you were playing hide and seek with the other shrine children. You hid underneath the bed, certain that none of the other children would check there.]
 
-As you were waiting to be found, your grandfather came running in, carrying something in his hands and muttering about needing more strength. You remember seeing him open this same closet and crouch down, placing that item in his hands in the closet. 
+(click: ?page)+(t8n:"fade-right")[As you were waiting to be found, your grandfather came running in, carrying something in his hands and muttering about needing more strength. You remember seeing him open this same closet and crouch down, placing that item in his hands in the closet.]
 
-Later that evening, you remember the shrine becoming agitated over a lost artifact, but you can't quite remember what it was.
+(click: ?page)+(t8n:"fade-right")[Later that evening, you remember the shrine becoming agitated over a lost artifact, but you can't quite remember what it was.]
 
-Intrigued by what your grandfather could have hid, you carefully open the compartment, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.
+(click: ?page)+(t8n:"fade-right")[Intrigued by what your grandfather could have hid, you carefully open the compartment, and there, nestled among moth-bitten blankets and pillows, you discover a ceremonial plate. Its intricate design reflects the craftsmanship of the artisans who once served the shrine, crafting items of reverence and devotion.]
 
-You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.]\
+(click: ?page)+(t8n:"fade-right")[You grasp the ceremonial plate, feeling its weight and significance in your hands. It serves as a tangible connection to the rituals and traditions upheld by your ancestors. With each item you collect, the shrine's restoration draws nearer, and the bond between past and present strengthens.(show:?back)]]\
 
-\|locked)[It looks like theres some sort of mechanism attached to it. It won't budge.]
+\|locked)[(t8n:"fade-right")[It looks like theres some sort of mechanism attached to it. It won't budge.(show:?back)]]\
 
-[[Go back->wooden closets]] 
+\|hasplate)[(t8n:"fade-right")[The box that once encompassed the ceremonial plate is now in your posession.]]
+
+|back)[(t8n:"fade-right")[[[Go back->wooden closets]]]]
 {
-(if:$isBoxUnlocked is true)[
+(if:$hasPlate is true)[
+	(show:?hasplate)
+]
+(else-if:$isBoxUnlocked is true)[
 	(set: $hasPlate to true)
     (show: ?unlocked)
 ]
@@ -162,91 +181,95 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 }
 
 
-:: get robes {"position":"2350,875","size":"100,100"}
-These robes hold deep significance in the realm of the keepers. They symbolize wisdom, spirituality, and a connection to the divine. Throughout the ages, they have been worn by those chosen to safeguard the sacred knowledge and protect the delicate balance between the mortal and ethereal realms.
+:: get robes {"position":"3400,1300","size":"100,100"}
+(t8n:"fade-right")[These robes hold deep significance in the realm of the keepers. They symbolize wisdom, spirituality, and a connection to the divine. Throughout the ages, they have been worn by those chosen to safeguard the sacred knowledge and protect the delicate balance between the mortal and ethereal realms.]
 
-As you reach out to touch the robes, you can almost feel the weight of centuries of history resting upon your shoulders. The memories of past keepers who wore these robes come alive, each one carrying the burden of their responsibilities and the honor bestowed upon them.
+(click:?page)+(t8n:"fade-right")[As you reach out to touch the robes, the memory hits. You see your grandfather sneaking the ceremonial robes away from their place of rest. He seems to think that the devotion of previous shrine keepers has given these robes divine powers. As a result, he is determined to claim this divinity for himself and become the most powerful he can.]
 
-You take the robes with you as you continue out of the maze
+(click:?page)+(t8n:"fade-right")[You take the robes with you as you continue out of the maze.
 
-[[Go back->storage room]]\
+[[Go back->storage room]]]\
 {
 (set: $hasRobes to true)
 }
 
 
-:: gold ingot {"position":"2425,1100","size":"100,100"}
-A gold ingot is revealed inside the painting.
+:: gold ingot {"position":"2600,1100","size":"100,100"}
+(t8n:"fade-right")[A gold ingot is revealed inside the painting.]
 
-You suddenly feel a sharp pain, and see a face that looks to be one of your ancestors using this as an offering to the gods.
+(click:?page)+(t8n:"fade-right")[You suddenly feel a sharp pain, and see a face that looks to be one of your ancestors using this as an offering to the gods.]
 
-You come back to your senses, and realize there was a small, sharp point on the ingot.
+(click:?page)+(t8n:"fade-right")[You see a face that looks to be one of your ancestors. You watch as he accepts shrine donations, sneakily sliding them into his own sleeves. You follow him into the prayer room and watch as he empties his pockets into a secret compartment.]
 
-[[Go back->prayer room]] 
+(click:?page)+(t8n:"fade-right")[You come back to your senses, and realize there was a small, sharp point on the ingot.
+
+[[Go back->prayer room]]]
 {
 (set: $hasGold to true)
 }
 
 
-:: guard dogs {"position":"1650,700","size":"100,100"}
-There are two of them.
+:: guard dogs {"position":"1750,700","size":"100,100"}
+(t8n:"fade-right")[There are two extremely weathered guard dogs, made of rock.]
 
-One on the left, and one on the right.
+(click:?page)+(t8n:"fade-right")[One on the [[left->left dog]], and one on the [[right->incense pot]].
 
-[[Go back->courtyard]]
+[[Go back->courtyard]]]
 
 
-:: incense pot {"position":"1700,850","size":"100,100"}
-Looking at the incence pot, it seems to have tons of inscriptions.
+:: incense pot {"position":"1825,900","size":"100,100"}
+(t8n:"fade-right")[Looking at the incence pot, it seems to have tons of inscriptions.]
 
-As you trace your fingers across the inscriptions, a murky memory appears.
+(click:?page)+(t8n:"fade-right")[As you trace your fingers across the inscriptions, a murky memory appears.]
 
-You can see red and flashing, an unfamilar shadow, which looks like to be a demon.
+(click:?page)+(t8n:"fade-right")[You can see red and flashing, an unfamilar shadow, which looks like to be a demon.]
 
-This item seems important. You take it.
+(click:?page)+(t8n:"fade-right")[This item seems important. You take it.
 
-[[Go back->guard dogs]] 
+[[Go back->guard dogs]]]
 {
 (set: $hasIncensePot to true)
 }
 
 
-:: incense pot memory {"position":"1900,1100","size":"100,100"}
-To forfill the OCD in you, you place down the incense pot, triggering a vivid memory.
+:: incense pot memory {"position":"2100,1100","size":"100,100"}
+(t8n:"fade-right")[To forfill the OCD in you, you place down the incense pot, triggering a vivid memory.]
 
-You can see a figure inscribing the pot, along with putting incense down inside it.
+(click:?page)+(t8n:"fade-right")[You can see a figure inscribing the pot, along with putting incense down inside it.]
 
-The person in question is still a mystery.
+(click:?page)+(t8n:"fade-right")[The person in question is still a mystery.
 
-[[Go back->large pots of incense]] 
+[[Go back->large pots of incense]]]
+
+<!--For the memory, describe the grandfather pouring blood or shit in the pot next to the statue-->
 
 
 :: intro 1 {"position":"900,100","size":"100,100"}
-It is dark. Lots of trees everywhere, but your determination is strong.
+(t8n:"fade-right")[It is dark. Lots of trees everywhere, but your determination is strong.]
 
-You want to know more about about your family, but your parents are stubborn and won't tell you anything.
+(click:?page)+(t8n:"fade-right")[You want to know more about about your family, but your parents are stubborn and won't tell you anything.]
 
-However, there is a place that you were told you can find more answers about your family's past.
+(click:?page)+(t8n:"fade-right")[However, there is a place that you were told you can find more answers about your family's past.]
 
-[[You continue to walk.->intro 2]]
+(click:?page)+(t8n:"fade-right")[[[You continue to walk.->intro 2]]]
 
 (display:"variables")
 
 
 :: intro 2 {"position":"1050,100","size":"100,100"}
-You walking forward, and find a huge crater below you, to which it seems like a rundown shrine.
+(t8n:"fade-right")[You walking forward, and find a huge crater below you, to which it seems like a rundown shrine.]
 
-[[You go in the crater.->intro 3]]
+(click:?page)+(t8n:"fade-right")[[[You go in the crater.->intro 3]]]
 
 
 :: intro 3 {"position":"1200,100","size":"100,100"}
-With a mixture of curiosity and trepidation, you take a step forward, drawn to the ancient shrine like a moth to a flame. The path feels uneven beneath your feet, overgrown with weeds and obscured by fallen leaves. As you cautiously advance, an unforeseen misstep causes your foot to catch on a hidden root.
+(t8n:"fade-right")[With a mixture of curiosity and trepidation, you take a step forward, drawn to the ancient shrine like a moth to a flame. The path feels uneven beneath your feet, overgrown with weeds and obscured by fallen leaves. As you cautiously advance, an unforeseen misstep causes your foot to catch on a hidden root.]
 
-Unable to regain your balance, you stumble and lose control. Gravity pulls you downward, and with a startled gasp, you plummet into the dark pit. The air rushes past you as you fall, as you become discombobulated.
+(click:?page)+(t8n:"fade-right")[Unable to regain your balance, you stumble and lose control. Gravity pulls you downward, and with a startled gasp, you plummet into the dark pit. The air rushes past you as you fall, as you become discombobulated.]
 
-After what feels like an eternity, you finally come to a sudden stop, landing with a thud at the bottom of the pit. Your surroundings are pitch black, the only sounds echoing through the confined space are your own ragged breaths.
+(click:?page)+(t8n:"fade-right")[After what feels like an eternity, you finally come to a sudden stop, landing with a thud at the bottom of the pit. Your surroundings are pitch black, the only sounds echoing through the confined space are your own ragged breaths.]
 
-[[You get up.->intro 4]]
+(click:?page)+(t8n:"fade-right")[[[You get up.->intro 4]]]
 
 
 :: intro 3 old {"position":"800,400","size":"100,100"}
@@ -256,59 +279,68 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 
 
 :: intro 4 {"position":"1350,100","size":"100,100"}
-Panic rises within you as you realize you are trapped. The pit's walls are steep and bumpy, leaving barely any footholds to climb out. It seems the shrine has claimed you as its captive. How did such a treacherous pit exist in the shrine's vicinity? Was it a deliberate trap, or a cruel twist of fate?
+(t8n:"fade-right")[Panic rises within you as you realize you are trapped. The pit's walls are steep and bumpy, leaving barely any footholds to climb out. It seems the shrine has claimed you as its captive. How did such a treacherous pit exist in the shrine's vicinity? Was it a deliberate trap, or a cruel twist of fate?]
 
-As your eyes adjust to the darkness, you catch a glimpse of what looks to be the shrine's courtyard, tauntingly close but agonizingly out of reach.
+(click:?page)+(t8n:"fade-right")[As your eyes adjust to the darkness, you catch a glimpse of what looks to be the shrine's courtyard, tauntingly close but agonizingly out of reach.]
 
-[[You enter the shrine.->start]]
-
-
-:: kitchen {"position":"975,875","size":"100,100"}
-As you step into the kitchen, a vivid memory unfurls before your eyes. You find yourself immersed in a scene from the past, witnessing the diligent preparations of food offerings made by your ancestors. The rhythmic sounds of chopping and the fragrant aroma of incense fill the air, evoking a sense of devotion and reverence.
-
-There is a [[scale]] of some sort.
-
-There is a [[heavy item->rice bowl]] of some sort.
-
-you return to the [[living quarters]]
+(click:?page)+(t8n:"fade-right")[[[You enter the shrine.->start]]]
 
 
-:: large pots of incense {"position":"1975,900","size":"100,100"}
-The large pots of incense in the prayer room evoke a memory of preparing fragrant offerings to the deity. Each pot is adorned with intricate patterns and symbols, representing different aspects of worship and spirituality. The air is filled with a soothing aroma as the incense slowly burns, creating a serene atmosphere for prayer and reflection.
+:: kitchen {"position":"900,1000","size":"100,100"}
+(t8n:"fade-right")[As you step into the kitchen, a vivid memory unfurls before your eyes. You find yourself immersed in a scene from the past, witnessing the diligent preparations of food offerings made by your ancestors. The rhythmic sounds of chopping and the fragrant aroma of incense fill the air, evoking a sense of devotion and reverence.]
 
-As you examine the pots more closely, you notice that one of them is missing. It seems like a crucial component is absent from the array of offerings. The |pot>[missing incense pot] raises questions and piques your curiosity. Could it hold a clue or possess a special significance?
+(click: ?page)+(t8n:"fade-right")[There is a [[scale]] of some sort.]
 
-You ponder the mystery of the missing incense pot, wondering what role it might play in your journey within this sacred space.
+(click: ?page)+(t8n:"fade-right")[There is a [[heavy item->rice bowl]] of some sort.
 
-[[Go back|prayer room]] 
+[[Go back->living quarters]]]
+
+
+:: large pots of incense {"position":"2100,900","size":"100,100"}
+(t8n:"fade-right")[The large pots of incense in the prayer room evoke a memory of preparing fragrant offerings to the deity. Each pot is adorned with intricate patterns and symbols, representing different aspects of worship and spirituality. The air is filled with a soothing aroma as the incense slowly burns, creating a serene atmosphere for prayer and reflection.]
+
+(click:?page)+(t8n:"fade-right")[As you examine the pots more closely, you notice that one of them is missing. It seems like a crucial component is absent from the array of offerings. The |pot>[missing incense pot] raises questions and piques your curiosity. Could it hold a clue or possess a special significance?]
+
+(click:?page)+(t8n:"fade-right")[You ponder the mystery of the missing incense pot, wondering what role it might play in your journey within this sacred space.
+
+[[Go back|prayer room]]]
 {
 (if: $hasIncensePot is true)[(click: ?pot)[(go-to: "incense pot memory")]]
 }
 
 
-:: living quarters {"position":"600,700","size":"100,100"}
-As you enter the living quarters, a somber atmosphere envelopes you. The room appears frozen in time, a snapshot of a bygone era. Dilapidated and worn, the remnants of what was once a place of comfort now lay in ruins.
+:: left dog {"position":"1675,900","size":"100,100"}
+(t8n:"fade-right")[The dog's statue is cracked and worn. Upon closer inspection, there is a number 7 inscripted on it.
 
-To your left, you see the  [[beds]], On the right side of the room you see the [[wooden closets]], Towards the back of the living quarters, you discover the [[kitchen]]
-
-[[Back->courtyard]]
+[[Go back->guard dogs]]]
 
 
-:: maze fail {"position":"2950,1000","size":"100,100"}
-You fell, though you lived. You [[go back->maze start]] to where you started.
+:: living quarters {"position":"400,800","size":"100,100"}
+(t8n:"fade-right")[As you enter the living quarters, a somber atmosphere envelopes you. The room appears frozen in time, a snapshot of a bygone era. Dilapidated and worn, the remnants of what was once a place of comfort now lay in ruins.]
+
+(click: ?page)+(t8n:"fade-right")[To your left, you see the  [[beds]], On the right side of the room you see the [[wooden closets]], Towards the back of the living quarters, you discover the [[kitchen]]]
+
+(click: ?page)+(t8n:"fade-right")[[[Go back->courtyard]]]
 
 
-:: maze start {"position":"2950,850","size":"100,100"}
+:: maze fail {"position":"3200,1300","size":"100,100"}
+(t8n:"fade-right")[You fell through the floor, and by sheer luck, you survive. Looking around, you see a latter to [[go back->maze start]] to where you started.]
+
+
+:: maze start {"position":"3200,1100","size":"100,100"}
 {
 (set: _step to 0)
+(set: _direction to "forward")
 }\
-There is a stairway that leads to a large room. Though you should be careful, some of the tiles seem to look like they will collapse upon standing on them.
+(t8n:"fade-right")|a>[There is a stairway that leads to a large room. However, you should be careful, as some of the tiles seem to look like they will collapse upon standing on them.]\
 
-|f>[Forward]
-|l>[Left]
-|r>[Right]
+\|b)[You took 1 step |dir>[_direction]. Everything seems okay.]
 
-[[Go back->storage room]]\
+(t8n:"fade-right")|f>[Forward]
+(t8n:"fade-right")|l>[Left]
+(t8n:"fade-right")|r>[Right]
+
+(t8n:"fade-right")[[[Go back->storage room]]]\
 \
 {
 (set: _madeIt to (macro: num-type _step, [
@@ -317,45 +349,64 @@ There is a stairway that leads to a large room. Though you should be careful, so
 ]))
 
 (click-rerun: ?f)[
-	(if: _step is 0 or 2 or 3 or 6 or 8 or 10 or 11)[(set: _step to it + 1)]
+	(hide:?a)
+    (show:?b)
+	(if: _step is 0 or 2 or 3 or 6 or 8 or 10 or 11)[
+    	(set: _step to it + 1)
+        (set: _direction to "forward")
+    ]
     (else:)[(go-to: "maze fail")]
+    (replace: ?dir)[_direction]
 	(_madeIt: _step)
-
 ]
 (click-rerun: ?l)[
-	(if: _step is 1 or 9)[(set: _step to it + 1)]
+	(hide:?a)
+    (show:?b)
+	(if: _step is 1 or 9)[
+    	(set: _step to it + 1)
+    	(set: _direction to "to the left")
+    ]
     (else:)[(go-to: "maze fail")]
+    (replace: ?dir)[_direction]
     (_madeIt: _step)
 ]
 (click-rerun: ?r)[
-	(if: _step is 4 or 5 or 7 or 12)[(set: _step to it + 1)]
+	(hide:?a)
+    (show:?b)
+	(if: _step is 4 or 5 or 7 or 12)[
+    	(set: _step to it + 1)
+        (set: _direction to "to the right")
+    ]
     (else:)[(go-to: "maze fail")]
+    (replace: ?dir)[_direction]
     (_madeIt: _step)
 ]
 }
 
 
-:: memory {"position":"2050,1025","size":"100,100"}
-As you approach the locked door, your attention is immediately drawn to the passcode lock, its metallic surface reflecting the dim light of the storage room. But as you examine it closely, a surge of nostalgia washes over you, transporting you back in time to a cherished memory from one of the previous keepers.
+:: memory {"position":"3000,900","size":"100,100"}
+(t8n:"fade-right")[As you approach the locked door, your attention is immediately drawn to the passcode lock, its metallic surface reflecting the dim light of the storage room. But as you examine it closely, a surge of nostalgia washes over you, transporting you back in time to a cherished memory from one of the previous keepers.]
 
-In this vivid recollection, you find yourself standing in the warm glow of your family shrine. The air is thick with reverence and the faint scent of incense, as generations of tradition come alive before your eyes. Your family, gathered together in solemnity, partakes in the rituals that have been passed down through the ages.
+(click:?page)+(t8n:"fade-right")[In this vivid recollection, you find yourself standing in the warm glow of your family shrine. The air is thick with reverence and the faint scent of incense, as generations of tradition come alive before your eyes. Your family, gathered together in solemnity, partakes in the rituals that have been passed down through the ages.]
 
-Among the objects placed upon the shrine, three catch your attention the first is a delicate(text-color:"yellow")[ rice bowl], a symbol of sustenance and abundance. Its smooth surface and intricate patterns reflect the craftsmanship of those who came before you, a testament to the value placed on nourishment and gratitude.
+<!--(click:?page)+(t8n:"fade-right")[Among the objects placed upon the shrine, three catch your attention the first is a delicate (text-color:"yellow")[rice bowl], a symbol of sustenance and abundance. Its smooth surface and intricate patterns reflect the craftsmanship of those who came before you, a testament to the value placed on nourishment and gratitude.]
 
-Next, your eyes settle on a (text-color:"yellow")[guard dog] figurine, its stoic expression and steadfast stance embodying protection and loyalty. Passed down through the generations, this figurine represents the watchful presence that has safeguarded your family, offering a sense of security and comfort in uncertain times.
+(click:?page)+(t8n:"fade-right")[Next, your eyes settle on a (text-color:"yellow")[guard dog] figurine, its stoic expression and steadfast stance embodying protection and loyalty. Passed down through the generations, this figurine represents the watchful presence that has safeguarded your family, offering a sense of security and comfort in uncertain times.]
 
-But it is the (text-color:"yellow")[worn-out book] that holds a particular significance in your memory. Its pages, weathered and yellowed with age, contain the stories and wisdom of your ancestors.
+(click:?page)+(t8n:"fade-right")[But it is the (text-color:"yellow")[worn-out book] that holds a particular significance in your memory. Its pages, weathered and yellowed with age, contain the stories and wisdom of your ancestors.]
 
-In this memory, these three items, the rice bowl, the guard dog, and the worn-out book hold deep meaning and importance. They represent the rich tapestry of your family's heritage, the values and traditions that have shaped your identity. And now, standing before the locked door, you can't help but feel that these items must hold the key to unraveling the mysteries that lie beyond.
+(click:?page)+(t8n:"fade-right")[In this memory, these three items, the rice bowl, the guard dog, and the worn-out book hold deep meaning and importance. They represent the rich tapestry of your family's heritage, the values and traditions that have shaped your identity. And now, standing before the locked door, you can't help but feel that these items must hold the key to unraveling the mysteries that lie beyond.-->
 
+[[Look at the password lock->password]]
 
-[[Memory ends->password]] 
 [[Go back->storage room]]
 
 
-:: mirror puzzle {"position":"2425,900","size":"100,100"}
-It seems like the mirrors are all not in the right orientation. It seems like they must be clicked or something to be able to be moved.
+:: mirror puzzle {"position":"2700,900","size":"100,100"}
+(t8n:"fade-right")[When you enter the room, you notice a hole in the ceiling where moon light shines brightly though. All along the room are mirrors. Looking at the walls, you notice another hole along with some inscriptions. Approaching the walls, you see a painting of lines coming from the ceiling, bouncing off the mirrors, and hitting the hole in the wall.
+When the light of the midnight sun travels through the room, you shall better understand your faults.]
 
+(t8n:"fade-right")[\
 🌕
 |beam1>[┃
 ｜
@@ -370,10 +421,10 @@ It seems like the mirrors are all not in the right orientation. It seems like th
 |beam3>[　　　　　　　]|beam5>[　　　　　　]
 |beam3>[　　　　　　　]|beam5>[　　　　　　]
 　　　　　|mirror3>[🪞]|beam4>[　　　　　]|mirror4>[🪞]
+]
+(t8n:"fade-right")[[[Go back->prayer room]]]
 
-[[Go back->prayer room]]
-
-|unlock)[[[Something Unlocked->gold ingot]]]
+|unlock)[(t8n:"fade-right")[[[Something Unlocked->gold ingot]]]]
 {
 (set: $mirror1angle to 0)
 (set: $mirror2angle to 0)
@@ -426,25 +477,23 @@ It seems like the mirrors are all not in the right orientation. It seems like th
 }
 
 
-:: nothing {"position":"825,1225","size":"100,100"}
-The scale moves. But nothing happens.
+:: nothing {"position":"725,1400","size":"100,100"}
+(t8n:"fade-right")[The scale moves. But nothing happens.
 
-[[Go back->scale]]
+[[Go back->scale]]]
 
 
-:: offerings {"position":"1500,850","size":"100,100"}
+:: offerings {"position":"1500,700","size":"100,100"}
 You head to the prayer room, where the statue lies. Besides the statue, you place all the items down, hoping that this will finally put whatever demon lies at the shrine.
 
-(click: ?page)+(t8n: "fade-right")|a)[
-At first, your head spins, and you only see darkness.
+|a)[\
+(click: ?page)+(t8n: "fade-right")[Your head spins and you see only darkness.]
 
-The broken statue appears, with the same figure praying by it.
+(click: ?page)+(t8n: "fade-right")[When your vision clears, you see the prayer room as it was, before disaster struck. You see an elderly man in priest clothing praying at the base of the statue. As he prays, a dark aura begins to fill the room.]
 
-And all of the sudden, a large shadow incapicates the man, causing him to look like what appears to be the man bleeding out.
+(click: ?page)+(t8n: "fade-right")[All of a sudden, the aura solidifies and surrounds the man. When the aura finally disappears, the old man is revealed to be bleeding out on the ground.]
 
-The shadow then disappears, then, you feel a large weight being lifted from your shoulders. A clear, but peaceful vision enters your mind.
-
-You see what looks like to be some sort of godly figure.
+(click: ?page)+(t8n: "fade-right")[After the memory fades, you feel a weight lifted off your shoulders. You see a godly figure appear in front of you.]
 ]
 
 (click: ?page)|go)[[[Continue...->continue]]]
@@ -456,30 +505,30 @@ You see what looks like to be some sort of godly figure.
 }
 
 
-:: password {"position":"2750,1000","size":"100,100"}
+:: password {"position":"3000,1100","size":"100,100"}
 {
 (set: _digit1 to 0)
 (set: _digit2 to 0)
 (set: _digit3 to 0)
 }\
-A pecular like combination lock is keeping the door locked.
+(t8n:"fade-right")[A pecular like combination lock is keeping the door locked.]
 
-|incDig1>[∧] |incDig2>[∧] |incDig3>[∧]
+(t8n:"fade-right")[|incDig1>[∧] |incDig2>[∧] |incDig3>[∧]
 |digit1>[_digit1] |digit2>[_digit2] |digit3>[_digit3]
-|decDig1>[∨] |decDig2>[∨] |decDig3>[∨]
+|decDig1>[∨] |decDig2>[∨] |decDig3>[∨]]
 
 {
-(link: "Submit")[
+(t8n:"fade-right")[(link: "Submit")[
 	(if: _digit1 is 7 and _digit2 is 7 and _digit3 is 7)[
     	(go-to: "maze start")
     ]
     (else:)[
     	(go-to: "password fail")
     ]
-]
+]]
 }
 
-[[Go back->memory]] 
+(t8n:"fade-right")[[[Go back->storage room]]]
 
 {
 (set: _changeDigit to (macro: num-type _d, str-type _hook, bool-type _inc, [
@@ -504,59 +553,61 @@ A pecular like combination lock is keeping the door locked.
 }
 
 
-:: password fail {"position":"2750,1150","size":"100,100"}
-Nothing happened...
+:: password fail {"position":"3000,1300","size":"100,100"}
+(t8n:"fade-right")[Nothing happened...
 
-[[Go back->password]]
+[[Go back->password]]]
 
 
-:: photograph {"position":"50,1100","size":"100,100"}
+:: photograph {"position":"100,1200","size":"100,100"}
+|get)[\
+(t8n:"fade-right")[You spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing a photograph.]
+
+(click:?page)+(t8n:"fade-right")[You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.]
+
+(click:?page)+(t8n:"fade-right")[A closer inspection of the photo reveals bloody fingerprints along the edges of the image. Perhaps this was a treasure of a shrine preist before they met their unfortunate demise. ]
+
+(click:?page)+(t8n:"fade-right")[You realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.]
+
+(click:?page)+(t8n:"fade-right")[As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.]
+
+(click:?page)+(t8n:"fade-right")[With the photo now safely in your possession, you continue your exploration, fueled by the desire to uncover the secrets of your family's past and the abandoned shrine.(show:?back)]]\
+\
+\|unget)[(t8n:"fade-right")[There is nothing else.](show:?back)]
+
+|back)[(t8n:"fade-right")[[[Go back->beds]]]]
+
 {
 (if:$hasItem1 is false)[
-	You spot a glimmer of something hidden beneath one of the tattered blankets. Carefully, you lift the moth-eaten fabric, revealing a photograph.
-    
-    You pick up the photo and wipe away the grime to reveal a faded yet heartwarming image. The scene captured within the frame portrays a group of joyful figures. The shrine priests, dressed in traditional garb, can be seen playfully chasing after a group of children. Laughter and smiles fill the air, evoking a sense of warmth and happiness.
-
-A closer inspection of the photo reveals bloody fingerprints along the edges of the image. Perhaps this was a treasure of a shrine preist before they met their unfortunate demise. 
-
-You realize that these priests are none other than your grandparents. The realization dawns on you that the children they're playing with are your mother and her siblings. It's a beautiful snapshot from a time long past, a precious memory frozen in time.
-
-As you hold the photo in your hands, you can't help but feel a deep connection to your family's history. It serves as a reminder of the love and joy that once resided within these sacred walls. Perhaps this photo holds additional significance or clues that can help you unravel the mysteries of the shrine or aid you in a future puzzle.
-
-With the photo now safely in your possession, you continue your exploration, fueled by the desire to uncover the secrets of your family's past and the abandoned shrine.]\
-
-\|unget)[There is nothing else.]
-
-[[Go back->beds]]
-{
-(if:$hasItem1 is false)[
+	(show: ?get)
 	(set: $hasItem1 to true)
 ]
 (else:)[
-	(hide: ?get)
 	(show: ?unget)
 ]
 }
 
 
-:: prayer cushions {"position":"2275,900","size":"100,100"}
-The prayer cushions in the prayer room serve as a place for individuals to engage in the ceremony of offering and praying to the deity. The soft and comfortable cushions are in disarray, with slashes and holes in them. They were supposed to invite visitors to sit and immerse themselves in quiet contemplation.
+:: prayer cushions {"position":"2500,900","size":"100,100"}
+(t8n:"fade-right")[The prayer cushions in the prayer room serve as a place for individuals to engage in the ceremony of offering and praying to the deity. The soft and comfortable cushions are in disarray, with slashes and holes in them. They were supposed to invite visitors to sit and immerse themselves in quiet contemplation.]
 
-As you observe the room, you notice something intriguing hidden among the cushions—a small, intricately carved amulet. The amulet glimmers softly, hinting at its significance. 
+(click:?page)+(t8n:"fade-right")[As you observe the room, you notice something intriguing hidden among the cushions—a small, intricately carved amulet. The amulet glimmers softly, hinting at its significance.]
 
-On the amulet, there are several carvings. It seems to be made of some type of metal, most likely gold. It could have belonged to an ancestor of yours.
+(click:?page)+(t8n:"fade-right")[On the amulet, there are several carvings. It seems to be made of some type of metal, most likely gold. It could have belonged to an ancestor of yours.]
 
-Although its purpose and meaning still remains a mystery, it seems to hold a deeper connection to the prayers offered in this sacred space.
+(click:?page)+(t8n:"fade-right")[Although its purpose and meaning still remains a mystery, it seems to hold a deeper connection to the prayers offered in this sacred space.
  
-[[Go back|prayer room]]
+[[Go back|prayer room]]]
+
+<!--Todo: add some sort of minor memory for this amulet-->
 
 
-:: prayer room {"position":"2200,700","size":"100,100"}
-Walking forward leads you to the prayer room. As you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor. The room is adorned with a [[faint glow|wishing well]] in the center.
+:: prayer room {"position":"2400,700","size":"100,100"}
+(t8n:"fade-right")[Walking forward leads you to the prayer room. As you enter, you notice [[large pots of incense]] and [[prayer cushions]] on the floor. The room is adorned with a [[faint glow|wishing well]] in the center.]
 
-Theres a large drawing of a deity. There's a hole in the center. There are also some mirrors, with moonlight shining onto one of the [[mirrors->mirror puzzle]].
+(click:?page)+(t8n:"fade-right")[Theres a large drawing of a deity. There's a hole in the center. There are also some mirrors, with moonlight shining onto one of the [[mirrors->mirror puzzle]].
 
-[[Go back->courtyard]]
+[[Go back->courtyard]]]
 
 
 :: quick ending 1 {"position":"1625,250","size":"100,100"}
@@ -579,93 +630,133 @@ You fall down, but instead of landing on your feet, you land on your head, causi
 END.
 
 
-:: rice bowl {"position":"1075,1025","size":"100,100"}
+:: rice bowl {"position":"1000,1200","size":"100,100"}
+|get)[(t8n:"fade-right")[\
+As you explore the kitchen, something on the counter catches your eye. Walking closer to the counter, you realize that it is your favorite rice bowl from your childhood. With a delighted exclamation, you pick up the bowl.
+
+It's intricate. As you trace the beautiful design on the edge of the bowl, you begin to notice a pattern. The design seems to be a repetition of the number 7.
+](show:?back)]\
+\|noget)[(t8n:"fade-right")[There is nothing else here.](show:?back)]
+
+|back)[(t8n:"fade-right")[[[Go back->kitchen]]]]
 {
 (if:$hasItem3 is false)[
-	You pick up a rice bowl of some sort. It's intricate. As you trace the beautiful design on the edge of the bowl, you begin to notice a pattern. The design seems to be a repetition of the number 7.
-    (set: $hasItem3 to true)
+	(set:$hasItem3 to true)
+    (show: ?get)
 ]
 (else:)[
-	there is nothing else here.
+	(show: ?noget)
 ]
 }
+<!--Insert more backstory about the player's connection to this rice bowl-->
 
-[[Go back->kitchen]]
 
+:: scale {"position":"800,1200","size":"100,100"}
+(t8n:"fade-right")[This scale requires an item.]\
 
-:: scale {"position":"875,1025","size":"100,100"}
-This scale requires an item.
+\|nothing)[(t8n:"fade-right")[
+However, you have nothing to offer.]]\
 
+\|item1)[
+
+(t8n:"fade-right")[[[Put the photo on the scale->nothing]]]]\
+
+\|item2)[
+
+(t8n:"fade-right")[[[Put the sachet on the scale->something]]]]\
+
+\|item3)[
+
+(t8n:"fade-right")[[[Put the rice bowl on the scale->nothing]]]]
+
+(t8n:"fade-right")[[[Go Back->kitchen]]]
 {
 (if: $hasItem1 is true)[
-	[[Put item 1->nothing]]
-    (text:"\n")
+	(show:?item1)
 ]
 (if: $hasItem2 is true)[
-	[[Put item 2->something]]
-    (text:"\n")
+	(show:?item2)
 ]
 (if: $hasItem3 is true)[
-	[[Put item 3->nothing]]
-    (text:"\n")
+	(show:?item3)
 ]
 (if: $hasItem1 is false and $hasItem2 is false and $hasItem3 is false)[
-	You have nothing to offer.
-     (text:"\n")
+	(show:?nothing)
 ]}
-[[Go Back->kitchen]]
 
 
-:: scented sachet {"position":"675,1025","size":"100,100"}
+:: scented sachet {"position":"550,1200","size":"100,100"}
+|get)[\
+(t8n:"fade-right")[You carefully retrieve the scented sachet, marveling at its exquisite craftsmanship. The delicate threads create a mesmerizing pattern, and the colors still retain their vibrancy despite the passage of time. Gently squeezing the sachet, you feel the softness of the fabric and hear a faint rustling of the herbal ingredients contained within.]
+
+(click:?page)+(t8n:"fade-right")[As you inhale the aromatic scent, memories flood your mind. You are transported back to your childhood, in the kitchen of your grandparents' home. The room is filled with the fragrant aroma of fresh herbs, as your grandmother expertly prepares remedies and potions. The scented sachet in your hands reminds you of the countless hours spent by her side, learning about the healing properties of different plants and herbs.]
+
+(click:?page)+(t8n:"fade-right")[You remember how your grandmother would carefully select each ingredient, considering its unique properties and the purpose it would serve. She would explain their uses, passing down her knowledge from generation to generation. The scented sachet was a symbol of her wisdom, her connection to nature, and her dedication to healing.]
+
+(click:?page)+(t8n:"fade-right")[As you hold the sachet, you can't help but feel a sense of gratitude for the memories and the knowledge that has been passed down to you. You realize that this item may hold more than just its enchanting aroma; it might be the key to unlocking a puzzle or providing insights into the mysteries of the abandoned shrine.]
+
+(click:?page)+(t8n:"fade-right")[With the scented sachet now in your possession, you continue your exploration, eager to uncover the secrets hidden within the shrine and to honor the wisdom and traditions of your ancestors.(show:?back)]\
+]\
+|unget)[\
+(t8n:"fade-right")[The wooden closets have nothing else but debris and dust.(show:?back)]\
+]
+
+|back)[(t8n:"fade-right")[[[Go back->wooden closets]]]]
 {
 (if:$hasItem2 is false)[
-	You carefully retrieve the scented sachet, marveling at its exquisite craftsmanship. The delicate threads create a mesmerizing pattern, and the colors still retain their vibrancy despite the passage of time. Gently squeezing the sachet, you feel the softness of the fabric and hear a faint rustling of the herbal ingredients contained within.
-
-As you inhale the aromatic scent, memories flood your mind. You are transported back to your childhood, in the kitchen of your grandparents' home. The room is filled with the fragrant aroma of fresh herbs, as your grandmother expertly prepares remedies and potions. The scented sachet in your hands reminds you of the countless hours spent by her side, learning about the healing properties of different plants and herbs.
-
-You remember how your grandmother would carefully select each ingredient, considering its unique properties and the purpose it would serve. She would explain their uses, passing down her knowledge from generation to generation. The scented sachet was a symbol of her wisdom, her connection to nature, and her dedication to healing.
-
-As you hold the sachet, you can't help but feel a sense of gratitude for the memories and the knowledge that has been passed down to you. You realize that this item may hold more than just its enchanting aroma; it might be the key to unlocking a puzzle or providing insights into the mysteries of the abandoned shrine.
-
-With the scented sachet now in your possession, you continue your exploration, eager to uncover the secrets hidden within the shrine and to honor the wisdom and traditions of your ancestors.
-    (set: $hasItem2 to true)
+	(set: $hasItem2 to true)
+	(show:?get)
 ]
-(else:)[
-	There is nothing else interesting.
-]
+(else:)[(show:?unget)]
 }
 
-[[Go back->wooden closets]]
 
+:: something {"position":"875,1400","size":"100,100"}
+|get)[(t8n:"fade-right")[You hear an unlocking sound coming from the wooden closets.]]\
+|already)[(t8n:"fade-right")[Nothing happened, but you can recall an unlocking sound from the wooden closets.]]
 
-:: something {"position":"925,1225","size":"100,100"}
-You hear an unlocking sound coming from the wooden closets.
-
-[[Go back->scale]] {
-(set:$isBoxUnlocked to true)
+(t8n:"fade-right")[[[Go back->scale]]]
+{
+(if:$isBoxUnlocked is false)[
+	(set:$isBoxUnlocked to true)
+    (show:?get)
+]
+(else:)[
+	(show:?already)
+]
 }
 
 
 :: start {"position":"1500,100","size":"100,100"}
-As you explore the abandoned shrine, a sense of solemnity hangs in the air. The remnants of neglect and decay surround you, casting a gloomy shadow over the once revered place. 
+(t8n:"fade-right")[As you explore the abandoned shrine, a sense of solemnity hangs in the air. The remnants of neglect and decay surround you, casting a gloomy shadow over the once revered place.]
 
-[[Go through the Torii Gates->torii gates]]
-
-
+(click:?page)+(t8n:"fade-right")[[[Go through the Torii Gates->torii gates]]]
 
 
-:: storage room {"position":"2900,700","size":"100,100"}
-As you enter the storage room, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.
+:: storage room {"position":"3200,700","size":"100,100"}
+(t8n:"fade-right")[As you enter the storage room, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.]
 
-Among the items scattered throughout the storage room, you notice a collection of rusty tools resting on a worn workbench. The tools bear the marks of time and neglect, their once-sharp edges now dulled by corrosion. Amidst the rusty tools, your gaze falls upon a worn [[book]] resting on a dusty shelf. 
+(click:?page)+(t8n:"fade-right")[Among the items scattered throughout the storage room, you notice a collection of rusty tools resting on a worn workbench. The tools bear the marks of time and neglect, their once-sharp edges now dulled by corrosion. Amidst the rusty tools, your gaze falls upon a worn [[book]] resting on a dusty shelf. ]
 
-Amidst the artifacts and relics in the storage room, your eyes are drawn to a collection of bloodstained[[weapons and armor]] resting in the corner of the room
+(click:?page)+(t8n:"fade-right")[Amidst the artifacts and relics in the storage room, your eyes are drawn to a collection of bloodstained[[weapons and armor]] resting in the corner of the room]
 
-Your eyes are drawn to a sturdy metal door, and upon closer inspection, you notice a passcode lock affixed to it. The purpose of this lock remains unknown, but it holds the promise of secrets waiting to be unveiled.
+(click:?page)+(t8n:"fade-right")[Your eyes are drawn to a sturdy metal door, and upon closer inspection, you notice a passcode lock affixed to it. The purpose of this lock remains unknown, but it holds the promise of secrets waiting to be unveiled.]
 
-Theres a passcode lock [[here->password]].
+(click:?page)+(t8n:"fade-right")[Theres a passcode lock [[here->password]].
 
-[[Go back|courtyard]]
+[[Go back|courtyard]]]
+
+
+:: title {"position":"750,100","size":"100,100"}
+(t8n:"fade-right")+(color:red)+(text-style:"bold")+(text-style:"fidget")+(text-size:3)[Kamikoe]
+(t8n:"fade-right")+(color:red)+(text-style:"bold")+(text-style:"fidget")[神声]
+
+
+(t8n:"fade-right")[The are minor descriptions of blood.
+
+If you see a blue border, you must click the screen to reveal the next text.
+
+[[Start Game->intro 1]]]
 
 
 :: torii gates {"position":"1500,250","size":"100,100"}
@@ -681,12 +772,12 @@ Theres a passcode lock [[here->password]].
 	(out:)[]
 ]))
 }\
-\
+
 \(t8n:"fade-right")[Your footsteps echo through the courtyard as you come across an ancient, weathered rock.]
 
 (click: ?page)+(t8n:"fade-right")[Suddenly, a voice resounds in your head, filled with accusation and anger. ]
 
-(click: ?page)[(_typewrite: "\"You. You and ancestors are a disgrace to this shrine. Do you wish to keep angering me, or will you amend what your family has done?\"", (text-style:"shudder")+(text-style:"shadow")+(color:red), 60ms, "speech1")|speech1)["You. You and ancestors are a disgrace to this shrine. Do you wish to keep angering me, or will you amend what your family has done?"]]
+(click: ?page)[(_typewrite: "\"You. You and ancestors are a disgrace to this shrine. Do you wish to keep angering me, or will you amend what your family has done?\"", (text-style:"shudder")+(text-style:"shadow")+(color:red), 80ms, "speech1")|speech1)[]]
 
 (click: ?page)+(t8n:"fade-right")[The words reverberate within you, and you feel a weight of responsibility descend upon your shoulders.]
 
@@ -697,7 +788,7 @@ Theres a passcode lock [[here->password]].
 ]
 
 
-:: variables {"position":"1225,725","size":"100,100"}
+:: variables {"position":"1100,300","size":"100,100"}
 {
 (set: _sucgma to "nutz")
 
@@ -718,39 +809,51 @@ Theres a passcode lock [[here->password]].
 (set: $hasItem2 to false)
 (set: $hasItem3 to false)
 (set: $isBoxUnlocked to false)
-}
+}\
 
-[[offerings]]
+\<!--(go-to:"ema")-->
 
 
-:: weapons and armor {"position":"2475,625","size":"100,100"}
-As you approach the collection of bloodstained weapons and armor in the storage room, you can't help but feel a mixture of awe and solemnity. These artifacts bear the weight of history, each one telling a story of its own.
+:: weapons and armor {"position":"3500,900","size":"100,100"}
+(t8n:"fade-right")[As you approach the collection of bloodstained weapons and armor in the storage room, you can't help but feel a mixture of awe and solemnity. These artifacts bear the weight of history, each one telling a story of its own.]
 
-The weapons, adorned with dried bloodstains, reflect the brutality of past conflicts. There are swords with blades of various lengths, their once-sharp edges now dulled from countless battles. Some blades bear nicks and notches, evidence of desperate clashes and close calls. The hilts of the swords, worn and weathered, still display remnants of intricate engravings and symbols, hinting at the cultural and artistic traditions from which they originated.
+(click:?page)+(t8n:"fade-right")[The weapons, adorned with dried bloodstains, reflect the brutality of past conflicts. There are swords with blades of various lengths, their once-sharp edges now dulled from countless battles. Some blades bear nicks and notches, evidence of desperate clashes and close calls. The hilts of the swords, worn and weathered, still display remnants of intricate engravings and symbols, hinting at the cultural and artistic traditions from which they originated.]
 
-As your gaze shifts to the [[armor]], you see suits that once provided protection to brave soldiers on the battlefield. Each piece carries the marks of its encounters, with dents, scratches, and even punctures, testifying to the violence it endured. Chainmail shirts, interlocking rings tarnished with time, remind you of the intricate craftsmanship involved in their creation.
+(click:?page)+(t8n:"fade-right")[As your gaze shifts to the [[armor]], you see suits that once provided protection to brave soldiers on the battlefield. Each piece carries the marks of its encounters, with dents, scratches, and even punctures, testifying to the violence it endured. Chainmail shirts, interlocking rings tarnished with time, remind you of the intricate craftsmanship involved in their creation.
 
-[[Go back|storage room]] 
+[[Go back|storage room]]]
 
 
 :: what happened {"position":"1500,400","size":"100,100"}
-The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation. 
+(t8n:"fade-right")[The voice speaks of the improper care the shrine has received, the broken statue of the deity, and the missing items that were once essential for its preservation.]
 
-It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.
+(click:?page)+(t8n:"fade-right")[It becomes clear that in order to restore balance and heal the wounds inflicted upon the shrine, you must right the wrongs of your ancestors and find and reclaim these sacred items.]
 
-[[Go to the courtyard->courtyard]]
-
-
-:: wishing well {"position":"2125,900","size":"100,100"}
-As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something [[glimmering at the bottom->wishing well riddle]]—a vital clue that holds the power to restore the statue.
-
-[[Go back|prayer room]]
+(click:?page)+(t8n:"fade-right")[[[Go to the courtyard->courtyard]]]
 
 
-:: wishing well riddle {"position":"2125,1100","size":"100,100"}
-The text reads:
+:: wishing well {"position":"2300,900","size":"100,100"}
+(t8n:"fade-right")[As you approach the faint glow in the prayer room, your attention is drawn to a beautifully crafted wishing well located at the back. The gentle sound of trickling water adds to the peaceful ambiance. Peering into the well, you notice something [[glimmering at the bottom->wishing well riddle]]—a vital clue that holds the power to restore the statue.
 
-(text-style:"blur")+(text-style: "bold")["Between two doors lie the protectors of this sanctuary. Choose the right one to recieve what you seek."]
+[[Go back|prayer room]]]
+
+
+:: wishing well riddle {"position":"2300,1100","size":"100,100"}
+{
+(set: _typewrite to (macro: str-type _text, changer-type _changers, num-type _speed, str-type _hookname, [
+	(set: $i to 1)
+	(show: (hooks-named: _hookname))
+	(live: _speed)[
+		(append: (hooks-named: _hookname))+_changers[(print: _text's $i)]
+		(set: $i to it + 1)
+		(if: $i > _text's length)[(stop:)]
+	]
+	(out:)[]
+]))
+}\
+(t8n:"fade-right")[The text reads:]
+
+(click:?page)+(t8n:"fade-right")[|riddle)[](_typewrite: "\"Between two doors lie the protectors of this sanctuary. Choose the right one to recieve what you seek.\"", (text-style:"blur")+(text-style: "bold")+(color:red), 60, "riddle")]
 
 [[Go back->wishing well]] 
 {
@@ -758,16 +861,16 @@ The text reads:
 }
 
 
-:: wooden closets {"position":"600,875","size":"100,100"}
-As you cautiously approach the wooden closets, the musty scent grows stronger. The doors creak open reluctantly, revealing the moth-bitten priest clothes neatly arranged inside. These ceremonial garments, once vibrant and significant, have fallen victim to time's relentless grasp.
+:: wooden closets {"position":"450,1000","size":"100,100"}
+(t8n:"fade-right")[As you cautiously approach the wooden closets, the musty scent grows stronger. The doors creak open reluctantly, revealing the moth-bitten priest clothes neatly arranged inside. These ceremonial garments, once vibrant and significant, have fallen victim to time's relentless grasp.]
 
-You run your fingers over the delicate fabric, feeling the traces of history embedded within each thread. The official name for these clothes is "Kamishimo," a traditional attire worn by shrine priests during rituals and ceremonies. Though now tattered and faded, they still bear a sense of sacredness.
+(click: ?page)+(t8n:"fade-right")[You run your fingers over the delicate fabric, feeling the traces of history embedded within each thread. The official name for these clothes is "Kamishimo," a traditional attire worn by shrine priests during rituals and ceremonies. Though now tattered and faded, they still bear a sense of sacredness.]
 
-There is a [[box->examine box]] with something inside.
+(click: ?page)+(t8n:"fade-right")[There is a [[box->examine box]] with something inside.]
 
-There is also [[some item->scented sachet]] lying on the ground.
+(click: ?page)+(t8n:"fade-right")[There is also [[some item->scented sachet]] lying on the ground.
 
-return to the [[living quarters]].
+[[Go back->living quarters]]]
 
 
 :: StoryStylesheet [stylesheet]
