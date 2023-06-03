@@ -48,6 +48,14 @@ Kamikoe
 }
 
 
+:: armor {"position":"2625,675","size":"100,100"}
+As you stand among the bloodstained armor, a flood of memories rushes through your mind, transporting you to a time of war and devastation. Images of injured soldiers seeking sanctuary and aid fill your thoughts, their faces etched with pain, determination, and the indomitable human spirit.
+
+As you reflect on these memories, you are reminded of the immense sacrifices made by those who fought in wars. The bloodstained weapons and armor in the storage room bear witness to the trials endured and the lives forever changed. They serve as a solemn reminder of the human cost of conflict and the strength of those who persevered despite unimaginable hardships.
+
+[[Go back|weapons and armor]]
+
+
 :: beds {"position":"325,875","size":"100,100"}
 As you approach the beds, a bittersweet memory begins to play out in your mind. You catch glimpses of the past, a time when the shrine priests lived joyfully within these walls. Laughter echoes through the air, and the sound of prayers being offered resonates with warmth and devotion.
 
@@ -61,7 +69,17 @@ You decide to leave the beds behind for now and return to the living quarters, y
 [[Return to the living quarters|living quarters]]
 
 
-:: continue {"position":"1500,1000","size":"100,100"}
+:: book {"position":"2475,750","size":"100,100"}
+The book's cover shows signs of age, its once vibrant colors faded by time. The edges of the pages are frayed and yellowed, hinting at the countless hands that have turned them over the years.
+
+As you flip through the pages of the worn book, your fingers tracing the faded words and illustrations, you reach the end. Curiosity compels you to glance at the final pages, and there, tucked away near the back, you notice something intriguing. Amongst the final paragraphs and notes, a small handwritten number catches your eye: a number 7.
+
+It seems inconspicuous at first, a mere digit on the page, but a spark of recognition ignites within you. Could this number hold significance?
+
+[[Go back->storage room]] 
+
+
+:: continue {"position":"1225,1400","size":"100,100"}
 There is a person, kneeling in front the statue that was once broken. 
 
 There, those items that you collected were also present.
@@ -144,8 +162,12 @@ You grasp the ceremonial plate, feeling its weight and significance in your hand
 }
 
 
-:: get robes {"position":"3100,850","size":"100,100"}
-You found some robes. It seems important.
+:: get robes {"position":"2350,875","size":"100,100"}
+These robes hold deep significance in the realm of the keepers. They symbolize wisdom, spirituality, and a connection to the divine. Throughout the ages, they have been worn by those chosen to safeguard the sacred knowledge and protect the delicate balance between the mortal and ethereal realms.
+
+As you reach out to touch the robes, you can almost feel the weight of centuries of history resting upon your shoulders. The memories of past keepers who wore these robes come alive, each one carrying the burden of their responsibilities and the honor bestowed upon them.
+
+You take the robes with you as you continue out of the maze
 
 [[Go back->storage room]]\
 {
@@ -280,7 +302,7 @@ You fell, though you lived. You [[go back->maze start]] to where you started.
 {
 (set: _step to 0)
 }\
-There is a stairway that leads to a large room. Tho you should be careful, some of the tiles seem to look like they will collapse upon standing on them.
+There is a stairway that leads to a large room. Though you should be careful, some of the tiles seem to look like they will collapse upon standing on them.
 
 |f>[Forward]
 |l>[Left]
@@ -313,14 +335,18 @@ There is a stairway that leads to a large room. Tho you should be careful, some 
 }
 
 
-:: memory {"position":"2800,850","size":"100,100"}
-<!--As you examine the passcode lock, a wave of nostalgia washes over you, triggering a vivid memory from one of the previous keepers. You remember a time when your family would gather around the family shrine, honoring the traditions passed down through generations.
+:: memory {"position":"2050,1025","size":"100,100"}
+As you approach the locked door, your attention is immediately drawn to the passcode lock, its metallic surface reflecting the dim light of the storage room. But as you examine it closely, a surge of nostalgia washes over you, transporting you back in time to a cherished memory from one of the previous keepers.
 
-In this memory, youare shown a moment of quiet contemplation as you watched your grandparents light incense and offer prayers at the shrine. Your eyes wandered to the ornate calligraphy hanging on the wall, displaying a quote from a revered ancestor: "To find what's lost, seek the path of the forgotten."
+In this vivid recollection, you find yourself standing in the warm glow of your family shrine. The air is thick with reverence and the faint scent of incense, as generations of tradition come alive before your eyes. Your family, gathered together in solemnity, partakes in the rituals that have been passed down through the ages.
 
-You realize that this memory might hold a clue to the passcode. The phrase "path of the forgotten" stands out to you. You ponder its significance as you glance around the room, searching for any hints or connections to this phrase.
+Among the objects placed upon the shrine, three catch your attention the first is a delicate(text-color:"yellow")[ rice bowl], a symbol of sustenance and abundance. Its smooth surface and intricate patterns reflect the craftsmanship of those who came before you, a testament to the value placed on nourishment and gratitude.
 
-Your gaze falls upon a worn-out notebook resting on one of the shelves. Opening it, you discover a faded page with handwritten notes. And there it is, subtly embedded in the faded lines and symbols on the map, the numbers 024.-->
+Next, your eyes settle on a (text-color:"yellow")[guard dog] figurine, its stoic expression and steadfast stance embodying protection and loyalty. Passed down through the generations, this figurine represents the watchful presence that has safeguarded your family, offering a sense of security and comfort in uncertain times.
+
+But it is the (text-color:"yellow")[worn-out book] that holds a particular significance in your memory. Its pages, weathered and yellowed with age, contain the stories and wisdom of your ancestors.
+
+In this memory, these three items, the rice bowl, the guard dog, and the worn-out book hold deep meaning and importance. They represent the rich tapestry of your family's heritage, the values and traditions that have shaped your identity. And now, standing before the locked door, you can't help but feel that these items must hold the key to unraveling the mysteries that lie beyond.
 
 
 [[Memory ends->password]] 
@@ -631,13 +657,11 @@ As you explore the abandoned shrine, a sense of solemnity hangs in the air. The 
 :: storage room {"position":"2900,700","size":"100,100"}
 As you enter the storage room, a dim light filters through the gloom, casting eerie shadows upon the damp walls. The sound of water droplets echoes faintly, creating an atmosphere of solitude and mystery.
 
-The storage room reveal themselves to be more than just a place of storing junk. Here, amidst the faded tiles and mildew-covered surfaces, you discover a resource room, filled with tools and items that may aid you in your quest to retrieve the missing items.
+Among the items scattered throughout the storage room, you notice a collection of rusty tools resting on a worn workbench. The tools bear the marks of time and neglect, their once-sharp edges now dulled by corrosion. Amidst the rusty tools, your gaze falls upon a worn [[book]] resting on a dusty shelf. 
 
-Shelves line the walls, displaying an assortment of aged and worn equipment. Rusty wrenches, frayed ropes, and weathered flashlights catch your attention. These tools, though worn by time and neglect, still possess the potential to assist you in your journey.
+Amidst the artifacts and relics in the storage room, your eyes are drawn to a collection of bloodstained[[weapons and armor]] resting in the corner of the room
 
-With cautious curiosity, you explore the room further, discovering a hidden compartment that holds additional resources. Inside, you find a tattered map, its faded markings hinting at secret passages and hidden chambers within the shrine. This newfound knowledge may prove invaluable as you navigate the shrine's depths.
-
-With a sense of determination, you gather the tools and resources you deem necessary, equipping yourself for the challenges that lie ahead. The storage rooms have revealed their hidden purpose, providing you with the means to uncover the missing items and restore the shrine's sanctity.
+Your eyes are drawn to a sturdy metal door, and upon closer inspection, you notice a passcode lock affixed to it. The purpose of this lock remains unknown, but it holds the promise of secrets waiting to be unveiled.
 
 Theres a passcode lock [[here->password]].
 
@@ -696,7 +720,17 @@ Theres a passcode lock [[here->password]].
 (set: $isBoxUnlocked to false)
 }
 
-[[ema]]
+[[offerings]]
+
+
+:: weapons and armor {"position":"2475,625","size":"100,100"}
+As you approach the collection of bloodstained weapons and armor in the storage room, you can't help but feel a mixture of awe and solemnity. These artifacts bear the weight of history, each one telling a story of its own.
+
+The weapons, adorned with dried bloodstains, reflect the brutality of past conflicts. There are swords with blades of various lengths, their once-sharp edges now dulled from countless battles. Some blades bear nicks and notches, evidence of desperate clashes and close calls. The hilts of the swords, worn and weathered, still display remnants of intricate engravings and symbols, hinting at the cultural and artistic traditions from which they originated.
+
+As your gaze shifts to the [[armor]], you see suits that once provided protection to brave soldiers on the battlefield. Each piece carries the marks of its encounters, with dents, scratches, and even punctures, testifying to the violence it endured. Chainmail shirts, interlocking rings tarnished with time, remind you of the intricate craftsmanship involved in their creation.
+
+[[Go back|storage room]] 
 
 
 :: what happened {"position":"1500,400","size":"100,100"}
