@@ -174,8 +174,8 @@ Kayla'']
 
 :: debug {"position":"500,400","size":"100,100"}
 (display: "variables")
-(set: $hasAllItems to true)
-(go-to:"offerings")
+<!--(set: $hasAllItems to true)-->
+(go-to:"incense pot")
 
 
 :: ema {"position":"1300,700","size":"100,100"}
@@ -235,28 +235,44 @@ Kayla'']
 
 
 :: get robes {"position":"3400,1300","size":"100,100"}
-(t8n:"fade-right")[These robes hold deep significance in the realm of the keepers. They symbolize wisdom, spirituality, and a connection to the divine. Throughout the ages, they have been worn by those chosen to safeguard the sacred knowledge and protect the delicate balance between the mortal and ethereal realms.]
+|not)[(t8n:"fade-right")[These robes hold deep significance in the realm of the keepers. They symbolize wisdom, spirituality, and a connection to the divine. Throughout the ages, they have been worn by those chosen to safeguard the sacred knowledge and protect the delicate balance between the mortal and ethereal realms.]
 
 (click:?page)+(t8n:"fade-right")[As you reach out to touch the robes, the memory hits. You see your grandfather sneaking the ceremonial robes away from their place of rest. He seems to think that the devotion of previous shrine keepers has given these robes divine powers. As a result, he is determined to claim this divinity for himself and become the most powerful he can.]
 
-(click:?page)+(t8n:"fade-right")[You take the robes with you as you continue out of the maze.
+(click:?page)+(t8n:"fade-right")[You take the robes with you as you continue out of the maze.(show:?back)]]\
 
-[[Go back->storage room]]]\
+\|has)[(t8n:"fade-right")[There is nothing else but a place where the robe belonged.](show:?back)]
+
+|back)[(t8n:"fade-right")[[[Go back->storage room]]]]\
 {
-(set: $hasRobes to true)
+(if:$hasRobes is false)[
+	(set: $hasRobes to true)
+    (show:?not)
+]
+(else:)[
+	(show:?has)
+]
 }
 
 
 :: gold ingot {"position":"2600,1100","size":"100,100"}
-(t8n:"fade-right")[A gold ingot is revealed inside the painting.]
+|not)[(t8n:"fade-right")[A gold ingot is revealed inside the painting.]
 
 (click:?page)+(t8n:"fade-right")[You suddenly feel a sharp pain, and see a face that looks to be one of your ancestors. You watch as he accepts shrine donations, sneakily sliding them into his own sleeves. You follow him into the prayer room and watch as he empties his pockets into a secret compartment.]
 
-(click:?page)+(t8n:"fade-right")[You come back to your senses, and realize there was a small, sharp point on the ingot.
+(click:?page)+(t8n:"fade-right")[You come back to your senses, and realize there was a small, sharp point on the ingot. (show:?back)]]\
 
-[[Go back->prayer room]]]
+\|has)[(t8n:"fade-right")[There is nothing inside the painting.](show:?back)]
+
+|back)[(t8n:"fade-right")[[[Go back->prayer room]]]]
 {
-(set: $hasGold to true)
+(if:$hasGold is false)[
+	(set: $hasGold to true)
+    (show:?not)
+]
+(else:)[
+	(show:?has)
+]
 }
 
 
@@ -269,17 +285,24 @@ Kayla'']
 
 
 :: incense pot {"position":"1825,900","size":"100,100"}
-(t8n:"fade-right")[Looking at the incence pot, it seems to have tons of inscriptions.]
+|not)[(t8n:"fade-right")[Looking at the incence pot, it seems to have tons of inscriptions.]
 
 (click:?page)+(t8n:"fade-right")[As you trace your fingers across the inscriptions, a murky memory appears.]
 
 (click:?page)+(t8n:"fade-right")[You can see red and flashing, an unfamilar shadow, which looks like to be a demon.]
 
-(click:?page)+(t8n:"fade-right")[This item seems important. You take it.
+(click:?page)+(t8n:"fade-right")[This item seems important. You take it.(show:?back)]]\
 
-[[Go back->guard dogs]]]
-{
-(set: $hasIncensePot to true)
+\|has)[(t8n:"fade-right")[You look at the statue of a dog, where the incense pot used to be. There is nothing else here.](show:?back)]
+
+|back)[(t8n:"fade-right")[[[Go back->guard dogs]]]]
+{(if:$hasIncensePot is false)[
+	(set: $hasIncensePot to true)
+    (show:?not)
+]
+(else:)[
+	(show:?has)
+]
 }
 
 
@@ -400,7 +423,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 (click-rerun: ?f)[
 	(hide:?a)
     (show:?b)
-	(if: _step is 0 or 2 or 5)[
+	(if: _step is 0 or 2 or 3 or 6 or 8 or 10 or 11)[
     	(set: _step to it + 1)
         (set: _direction to "forward")
     ]
@@ -411,7 +434,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 (click-rerun: ?l)[
 	(hide:?a)
     (show:?b)
-	(if: _step is 1 or 6)[
+	(if: _step is 1 or 9)[
     	(set: _step to it + 1)
     	(set: _direction to "to the left")
     ]
@@ -422,7 +445,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 (click-rerun: ?r)[
 	(hide:?a)
     (show:?b)
-	(if: _step is 3 or 4 or 7)[
+	(if: _step is 4 or 5 or 7 or 12)[
     	(set: _step to it + 1)
         (set: _direction to "to the right")
     ]
@@ -431,7 +454,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
     (_madeIt: _step)
 ]
 }
-<!--Shortened the maze-->
+<!--F L F F R R F R F L F F R-->
 
 
 :: memory {"position":"3000,900","size":"100,100"}
