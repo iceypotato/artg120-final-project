@@ -174,7 +174,8 @@ Kayla'']
 
 :: debug {"position":"500,400","size":"100,100"}
 (display: "variables")
-(go-to:"courtyard")
+(set: $hasAllItems to true)
+(go-to:"offerings")
 
 
 :: ema {"position":"1300,700","size":"100,100"}
@@ -544,16 +545,15 @@ You head to the prayer room, where the statue lies. Besides the statue, you plac
 
 (click: ?page)+(t8n: "fade-right")[All of a sudden, it solidifies and surrounds the man. When it finally disappears, the old man is revealed to be bleeding out on the ground.]
 
-<!--changed aura-->
-(click: ?page)+(t8n: "fade-right")[After the memory fades, you feel a weight lifted off your shoulders. You see a godly figure appear in front of you.]
-]
+(click: ?page)+(t8n: "fade-right")[After the memory fades, you feel a weight lifted off your shoulders. You see a godly figure appear in front of you.]]
 
-(click: ?page)|go)[[[Continue...->continue]]]
+|go)[(click: ?page)+(t8n: "fade-right")[[[Continue...->continue]]]]
 
 {
 (if: $hasAllItems is true)[
 	(show: ?a)
 ]
+(show:?go)
 }
 
 
@@ -679,11 +679,23 @@ You head to the prayer room, where the statue lies. Besides the statue, you plac
 
 
 :: quick ending 3 {"position":"1875,250","size":"100,100"}
-(t8n:"fade")+(t8n-time:4s)[[[END->title]]]
+{
+(set: _typewrite to (macro: str-type _text, changer-type _changers, num-type _speed, str-type _hookname, [
+	(set: $i to 1)
+	(show: (hooks-named: _hookname))
+	(live: _speed)[
+		(append: (hooks-named: _hookname))+_changers[(print: _text's $i)]
+		(set: $i to it + 1)
+		(if: $i > _text's length)[(stop:)]
+	]
+	(out:)[]
+]))
+}\
+(t8n:"fade")+(t8n-time:4s)[An eerie voice echoes through your conciousness.]
 
-//You really thought you could run away?// An eerie voice echoes through your conciousness. //You wish.//
+(click:?page)[|a)[](_typewrite: "You really thought you could run away? You wish.", (color: red)+(text-style:"italic"), 60, "a")]
 
-[[Restart.|start]]
+(click:?page)+(t8n:"fade")+(t8n-time:4s)[[[END->title]]]
 
 <!--added a little description as well as the ability to start over-->
 
