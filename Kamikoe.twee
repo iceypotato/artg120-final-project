@@ -175,7 +175,7 @@ Kayla'']
 :: debug {"position":"500,400","size":"100,100"}
 (display: "variables")
 <!--(set: $hasAllItems to true)-->
-(go-to:"incense pot")
+(go-to:"mirror puzzle")
 
 
 :: ema {"position":"1300,700","size":"100,100"}
@@ -476,10 +476,9 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 
 
 :: mirror puzzle {"position":"2700,900","size":"100,100"}
-(t8n:"fade-right")[When you enter the room, you notice a hole in the ceiling where moon light shines brightly though. All along the room are mirrors. Looking at the walls, you notice a painting along with some inscriptions. 
-//When the light of the midnight sun travels through the room, you shall better understand your faults.//]
+(t8n:"fade-right")[Looking at the walls, you notice a painting along with some inscriptions.
 
-<!--del the visual instructions, left the riddle inscription-->
+//When the light of the midnight sun travels through the room, you shall better understand your faults.//]
 
 (t8n:"fade-right")[\
 🌕
