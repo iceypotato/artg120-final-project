@@ -457,7 +457,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 <!--F L F F R R F R F L F F R-->
 
 
-:: memory {"position":"3000,900","size":"100,100"}
+:: memory {"position":"2975,850","size":"100,100"}
 (t8n:"fade-right")[As you approach the locked door, your attention is immediately drawn to the passcode lock, its metallic surface reflecting the dim light of the storage room. But as you examine it closely, a surge of nostalgia washes over you, transporting you back in time to a cherished memory from one of the previous keepers.]
 
 (click:?page)+(t8n:"fade-right")[In this vivid recollection, you find yourself standing in the warm glow of your family shrine. The air is thick with reverence and the faint scent of incense, as generations of tradition come alive before your eyes. Your family, gathered together in solemnity, partakes in the rituals that have been passed down through the ages.]
@@ -585,7 +585,7 @@ You head to the prayer room, where the statue lies. Besides the statue, you plac
 (set: _digit2 to 0)
 (set: _digit3 to 0)
 }\
-(t8n:"fade-right")[A pecular like combination lock is keeping the door locked.]
+(t8n:"fade-right")[A peculiar like combination lock is keeping the door locked.]
 
 (t8n:"fade-right")[|incDig1>[∧] |incDig2>[∧] |incDig3>[∧]
 |digit1>[_digit1] |digit2>[_digit2] |digit3>[_digit3]
