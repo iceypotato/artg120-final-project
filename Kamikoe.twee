@@ -403,8 +403,10 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 
 
 :: mirror puzzle {"position":"2700,900","size":"100,100"}
-(t8n:"fade-right")[When you enter the room, you notice a hole in the ceiling where moon light shines brightly though. All along the room are mirrors. Looking at the walls, you notice another hole along with some inscriptions. Approaching the walls, you see a painting of lines coming from the ceiling, bouncing off the mirrors, and hitting the hole in the wall.
-When the light of the midnight sun travels through the room, you shall better understand your faults.]
+(t8n:"fade-right")[When you enter the room, you notice a hole in the ceiling where moon light shines brightly though. All along the room are mirrors. Looking at the walls, you notice a painting along with some inscriptions. 
+//When the light of the midnight sun travels through the room, you shall better understand your faults.//]
+
+<!--del the visual instructions, left the riddle inscription-->
 
 (t8n:"fade-right")[\
 🌕
@@ -491,8 +493,9 @@ You head to the prayer room, where the statue lies. Besides the statue, you plac
 
 (click: ?page)+(t8n: "fade-right")[When your vision clears, you see the prayer room as it was, before disaster struck. You see an elderly man in priest clothing praying at the base of the statue. As he prays, a dark aura begins to fill the room.]
 
-(click: ?page)+(t8n: "fade-right")[All of a sudden, the aura solidifies and surrounds the man. When the aura finally disappears, the old man is revealed to be bleeding out on the ground.]
+(click: ?page)+(t8n: "fade-right")[All of a sudden, it solidifies and surrounds the man. When it finally disappears, the old man is revealed to be bleeding out on the ground.]
 
+<!--changed aura-->
 (click: ?page)+(t8n: "fade-right")[After the memory fades, you feel a weight lifted off your shoulders. You see a godly figure appear in front of you.]
 ]
 
@@ -626,8 +629,14 @@ You fall down, but instead of landing on your feet, you land on your head, causi
 [[Next->quick ending 3]]
 
 
-:: quick ending 3 {"position":"1875,250","size":"100,100"}
+:: quick ending 3 {"position":"1800,0","size":"100,100"}
 END.
+
+//You really thought you could run away?// An eerie voice echoes through your conciousness. //You wish.//
+
+[[Restart.|start]]
+
+<!--added a little description as well as the ability to start over-->
 
 
 :: rice bowl {"position":"1000,1200","size":"100,100"}
