@@ -197,9 +197,7 @@ Kayla'']
 :: gold ingot {"position":"2600,1100","size":"100,100"}
 (t8n:"fade-right")[A gold ingot is revealed inside the painting.]
 
-(click:?page)+(t8n:"fade-right")[You suddenly feel a sharp pain, and see a face that looks to be one of your ancestors using this as an offering to the gods.]
-
-(click:?page)+(t8n:"fade-right")[You see a face that looks to be one of your ancestors. You watch as he accepts shrine donations, sneakily sliding them into his own sleeves. You follow him into the prayer room and watch as he empties his pockets into a secret compartment.]
+(click:?page)+(t8n:"fade-right")[You suddenly feel a sharp pain, and see a face that looks to be one of your ancestors. You watch as he accepts shrine donations, sneakily sliding them into his own sleeves. You follow him into the prayer room and watch as he empties his pockets into a secret compartment.]
 
 (click:?page)+(t8n:"fade-right")[You come back to your senses, and realize there was a small, sharp point on the ingot.
 
@@ -324,7 +322,7 @@ Now, as an adult, the burning desire to uncover the truth ignites within you. Th
 
 
 :: maze fail {"position":"3200,1300","size":"100,100"}
-(t8n:"fade-right")[You fell through the floor, and by sheer luck, you survive. Looking around, you see a latter to [[go back->maze start]] to where you started.]
+(t8n:"fade-right")[You fell through the floor, and by sheer luck, you survive. Looking around, you see a ladder to [[go back->maze start]] to where you started.]
 
 
 :: maze start {"position":"3200,1100","size":"100,100"}
